@@ -7,13 +7,13 @@ AfterFlight - Find someone that wants to pick you up from the airport and make a
 #### Features
 * Account registration
   * Log in
-  * Change password
+  * Forgot password
 * Settings 
   * Airport location
   * Date & time
   * E-mail
 * Chat
-  * After service is accepted
+  * After post is accepted
 * Post service
   * Supply and demand
 * Accept/decline service
