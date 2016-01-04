@@ -24,16 +24,16 @@ You can find someone that wants to pick you up from the airport and bring you to
 The chat function makes it possible to discuss and decide the price together, and also give each other personal information (like phone number) or your flight number.
 
 #### Sketches
-
+"Will be uploaded tonight"
 
 #### Data sets and data sources
-
+"Done tonight"
 
 #### Application parts
-
+"Done tonight"
 
 #### Platform & APIs
-
+"Done tonight"
 
 #### Potential problems & possibilities to overcome these
-testjeeee
+"Done tonight"
