@@ -19,8 +19,9 @@ AfterFlight - Find someone that wants to pick you up from the airport and make a
 * Accept/decline service
 
 #### Problem solved
-AfterFlight is the best solution after travelling by plane. 
+AfterFlight is the best solution to bring you to your final destination after travelling by plane. 
 You can find someone that wants to pick you up from the airport and bring you to your final destination by car for a good price.
+Or vica versa, you can pick someone up from the airport near your house to earn some money.
 The chat function makes it possible to discuss and decide the price together, and also give each other personal information (like phone number) or your flight number.
 
 #### Sketches
