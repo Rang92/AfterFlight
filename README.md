@@ -39,5 +39,5 @@ AfterFlight will be created in the Android Studio platform with java and xml, an
 Implementing a chat function in the application could make it complex for me. If the chat function does not work, then I have to find another way to bring the client (traveler) and customer (car driver) to each other. A solution could be that that simply get each others e-mail address.
 
 #### Similar applications
-Uber: AfterFlight will be planned version of Uber, that means that make a reservation for another day, and the price will be decided by the client and customer.
+Uber: AfterFlight will be planned version of Uber, that means that you make a reservation for another day, and the price will be decided by the client and customer.
 
