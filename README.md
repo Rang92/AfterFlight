@@ -36,4 +36,4 @@ The chat function makes it possible to discuss and decide the price together, an
 
 
 #### Potential problems & possibilities to overcome these
-
+testjeeee
