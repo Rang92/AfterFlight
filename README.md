@@ -11,7 +11,7 @@ AfterFlight - Find someone that wants to pick you up from the airport and make a
 * Settings 
   * Airport location
   * Date & time
-  * E-Mail
+  * E-mail
 * Chat
   * After service is accepted
 * Post service
