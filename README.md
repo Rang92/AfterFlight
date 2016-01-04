@@ -9,19 +9,29 @@ AfterFlight - Find someone that wants to pick you up from the airport and make a
   * Log in
   * Forgot password
 * Settings 
-  * Airport location
-  * Date & time
-  * E-mail
+  * Home city
+  * Change password
 * Chat
   * After post is accepted
 * Post service
-  * Supply and demand
+  * Supply 
+  	* Airport location(s)
+  	* Work period
+  	* Time shift(s)
+  	* Car size
+  	* Max km to drive
+  * Demand
+  	* Airport location
+  	* Date
+  	* Time
+  	* Number of persons
+  	* Address of final destination
 * Accept/decline service
 
 #### Problem solved
 AfterFlight is the best solution to bring you to your final destination after travelling by plane. 
 You can find someone that wants to pick you up from the airport and bring you to your final destination by car for a good price.
-Or vica versa, you can pick someone up from the airport near your house to earn some money.
+Or vica versa, you can pick someone up from the airport near your house and bring that person to their final destination, and receive some money.
 The chat function makes it possible to discuss and decide the price together, and also give each other personal information (like phone number) or your flight number.
 
 #### Sketches
