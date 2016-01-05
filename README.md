@@ -50,7 +50,7 @@ The Application parts are defined above (see features). After that someone accep
 AfterFlight will be created in the Android Studio platform with java and xml, and will be combined with the parse API.
 
 #### Potential problems & possibilities to overcome these
-Implementing a chat function in the application could make it complex for me. If the chat function does not work, then I have to find another way to bring the client (traveler) and customer (car driver) to each other. A solution could be that that simply get each others e-mail address.
+Implementing a chat function in the application could make it complex for me. If the chat function does not work, then I have to find another way to bring the traveler and car driver to each other. A solution could be that that simply get each others e-mail address.
 
 #### Similar applications
 Uber: AfterFlight will be planned version of Uber, that means that you make a reservation for another day, and the price will be decided by the client and customer.
