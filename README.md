@@ -2,12 +2,13 @@
 ## Project Proposal
 Rang Salih - 10690972
 
-AfterFlight - Find someone that wants to pick you up from the airport and make a deal!
+AfterFlight - Find someone that wants to pick you up from the airport and make a deal! Or do you want to pick someone up?
 
 #### Features
-* Account registration
+* Account
   * Log in
   * Forgot password
+  * Register
 * Settings 
   * Home city
   * Change password
@@ -35,7 +36,9 @@ Or vica versa, you can pick someone up from the airport near your house and brin
 The chat function makes it possible to discuss and decide the price together, and also give each other personal information (like phone number) or your flight number.
 
 #### Sketches
-"Will be uploaded tonight"
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/screens1.jpeg?raw=true "Click to zoom and turn")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/screens2.jpeg?raw=true "Click to zoom and turn")
 
 #### Data sets and data sources
 AfterFlight only needs a database for registered accounts, this can be done with the parse(.com) API.
