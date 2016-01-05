@@ -41,7 +41,7 @@ The chat function makes it possible to discuss and decide the price together, an
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/screens2.jpeg?raw=true "Click to zoom and turn")
 
 #### Data sets and data sources
-AfterFlight only needs a database for registered accounts, this can be done with the parse(.com) API.
+AfterFlight needs a database for accounts(which includes posts), this can be done with the parse(.com) API.
 
 #### Application parts
 The Application parts are defined above (see features). After that someone accepted a service (to give or get) a new chat will be opened automatically with associated person.
