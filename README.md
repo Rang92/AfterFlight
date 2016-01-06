@@ -12,7 +12,7 @@ AfterFlight - Find someone that wants to pick you up from the airport and make a
 * Settings 
   * Home city
   * Change password
-* Chat
+* Chat or push notifications
   * After post is accepted
 * Post service
   * Supply 
@@ -33,7 +33,7 @@ AfterFlight - Find someone that wants to pick you up from the airport and make a
 AfterFlight is the best solution to bring you to your final destination after travelling by plane. 
 You can find someone that wants to pick you up from the airport and bring you to your final destination by car for a good price.
 Or vica versa, you can pick someone up from the airport near your house and bring that person to their final destination, and receive some money.
-The chat function makes it possible to discuss and decide the price together, and also give each other personal information (like phone number) or your flight number.
+The chat/post function makes it possible to discuss and decide the price together, and also give each other personal information (like phone number) or your flight number.
 
 #### Sketches
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/screens1.jpeg?raw=true "Click to zoom and turn")
