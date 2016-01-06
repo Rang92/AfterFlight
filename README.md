@@ -1,5 +1,5 @@
 # AfterFlight
-## Project Proposal
+### Project Proposal
 Rang Salih - 10690972
 
 AfterFlight - Find someone that wants to pick you up from the airport and make a deal! Or do you want to pick someone up?
