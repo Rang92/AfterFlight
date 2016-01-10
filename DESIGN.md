@@ -11,12 +11,12 @@ Rang Salih - 10690972
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/screens2.jpeg?raw=true "Click to zoom and turn")
 
 #### APIs
-API 22: Android 5.1(Lollipop)
-Parse
+* API 22: Android 5.1(Lollipop)
+* Parse
 
 #### Frameworks
-Java
-XML
+* Java
+* XML
 
 #### Datasources
 Will all be done in Parse.
