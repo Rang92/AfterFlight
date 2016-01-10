@@ -19,4 +19,4 @@ Rang Salih - 10690972
 * XML
 
 #### Datasources
-Will all be done in Parse.
+Will be done by Parse.
