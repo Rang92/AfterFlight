@@ -35,4 +35,5 @@ Have problems with registering accounts, app crashes.
 
 #### day 3
 Finished login and register activities to get in the main menu activity.
+Made an XML file of cities with the busiest airports.
 
