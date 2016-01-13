@@ -2,7 +2,8 @@
 ### Process Book
 Rang Salih - 10690972
 
-### <u>Week 1</u>
+### Week 1
+__________
 #### day 1
 Today I came up with the idea to create AfterFlight.
 Started and finished my readme file.
@@ -23,7 +24,8 @@ Finished design document, but will be updated in the weekend.
 Had some problems with my laptop, that is why some files will be added in the weekend.
 
 
-### <u>Week 2</u>
+### Week 2
+__________
 #### day 1
 Finished my navigation drawer layout and fragments.
 
