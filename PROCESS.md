@@ -2,6 +2,7 @@
 ### Process Book
 Rang Salih - 10690972
 
+### Week 1
 #### day 1
 Today I came up with the idea to create AfterFlight.
 Started and finished my readme file.
@@ -20,3 +21,16 @@ Problems with laptop started today, sadly enough.
 Finished prototype.
 Finished design document, but will be updated in the weekend.
 Had some problems with my laptop, that is why some files will be added in the weekend.
+
+
+### Week 2
+#### day 1
+Finished my navigation drawer layout and fragments.
+
+#### day 2
+Started with using parse for login and register activities.
+Have problems with registering accounts, app crashes.
+
+#### day 3
+Finished login and register activities to get in the main menu activity.
+
