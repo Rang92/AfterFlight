@@ -1,6 +1,7 @@
 package rang.afterflight;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.parse.ParseUser;
 
 import rang.afterflight.fragments.DemandFragment;
 import rang.afterflight.fragments.MainFragment;
@@ -117,9 +119,9 @@ public class MainMenu extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
             fm.beginTransaction().replace(R.id.content_main, new SettingsFragment()).commit();
         } else if (id == R.id.nav_logout) {
-
+//            Intent logOut = new Intent(getApplicationContext(), LoginActivity.class);
+//            startActivity(logOut);
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
