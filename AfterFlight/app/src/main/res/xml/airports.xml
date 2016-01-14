@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="airports_list">
+        <item>Adnan Menderes Airport</item>
+        <item>Adolfo Suarez Madrid–Barajas Airport</item>
+        <item>Alicante Airport</item>
+        <item>Amsterdam Airport Schiphol</item>
+        <item>Antalya Airport</item>
+        <item>Athens International Airport</item>
+        <item>Barcelona El Prat Airport</item>
+        <item>Berlin Tegel Airport</item>
+        <item>Birmingham Airport</item>
+        <item>Brussels Airport</item>
+        <item>Budapest Liszt Ferenc International Airport</item>
+        <item>Cologne Bonn Airport</item>
+        <item>Copenhagen Airport</item>
+        <item>Domodedovo International Airport</item>
+        <item>Dublin Airport</item>
+        <item>Dusseldorf Airport</item>
+        <item>Edinburgh Airport</item>
+        <item>Esenboga International Airport</item>
+        <item>Frankfurt Airport</item>
+        <item>Frederic Chopin Airport</item>
+        <item>Geneva International Airport</item>
+        <item>Gran Canaria Airport/item></item>
+        <item>Hamburg Airport</item>
+        <item>Helsinki-Vantaa Airport</item>
+        <item>Istanbul Ataturk Airport</item>
+        <item>Leonardo da Vinci–Fiumicino Airport</item>
+        <item>Lisbon Portela Airport</item>
+        <item>London Luton Airport</item>
+        <item>London Stansted Airport</item>
+        <item>London-Gatwick Airport</item>
+        <item>London-Heathrow Airport</item>
+        <item>Malpensa Airport</item>
+        <item>Manchester Airport</item>
+        <item>Munich Airport</item>
+        <item>Malaga Airport</item>
+        <item>Nice Cote d'Azur Airport</item>
+        <item>Oslo Airport, Gardermoen</item>
+        <item>Palma de Mallorca Airport</item>
+        <item>Paris-Charles de Gaulle Airport</item>
+        <item>Paris-Orly Airport</item>
+        <item>Pulkovo Airport</item>
+        <item>Sabiha Gokçen Airport</item>
+        <item>Sheremetyevo International Airport</item>
+        <item>Stockholm-Arlanda Airport</item>
+        <item>Stuttgart Airport</item>
+        <item>Tenerife South Airport</item>
+        <item>Vienna International Airport</item>
+        <item>Vnukovo International Airport</item>
+        <item>Vaclav Havel Airport Prague</item>
+        <item>Zurich Airport</item>
+    </string-array>
+</resources>

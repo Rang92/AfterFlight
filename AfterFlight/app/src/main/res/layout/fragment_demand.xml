@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
@@ -8,5 +8,38 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Demand"
         android:id="@+id/frag_demand"
-        android:layout_gravity="center_horizontal|top" />
-</FrameLayout>
+        android:layout_gravity="center_horizontal|top"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <android.support.v7.widget.SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchViewDemand"
+        android:layout_below="@+id/frag_demand"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listDemand"
+        android:layout_below="@+id/searchViewDemand"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:choiceMode="singleChoice" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/postButtonDemand"
+        android:src="@drawable/rsz_add_car"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

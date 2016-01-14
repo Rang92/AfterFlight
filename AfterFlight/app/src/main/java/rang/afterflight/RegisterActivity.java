@@ -24,7 +24,7 @@ public class RegisterActivity extends Activity {
         setContentView(R.layout.activity_register);
 
         // Set up the signup form.
-        usernameView = (EditText) findViewById(R.id.username);
+        usernameView = (EditText) findViewById(R.id.usernameRegister);
         passwordView = (EditText) findViewById(R.id.password1);
         passwordAgainView = (EditText) findViewById(R.id.password2);
 

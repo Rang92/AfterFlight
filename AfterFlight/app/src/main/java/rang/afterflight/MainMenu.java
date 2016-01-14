@@ -1,5 +1,6 @@
 package rang.afterflight;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.net.Uri;
@@ -21,6 +22,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.parse.ParseUser;
 
+import rang.afterflight.fragments.AddPostFragment;
 import rang.afterflight.fragments.DemandFragment;
 import rang.afterflight.fragments.MainFragment;
 import rang.afterflight.fragments.MessagesFragment;
@@ -29,6 +31,9 @@ import rang.afterflight.fragments.SettingsFragment;
 
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Fragment someFragment;
+
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -64,6 +69,9 @@ public class MainMenu extends AppCompatActivity
 
         FragmentManager fm = getFragmentManager();
         fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit();
+
+
+
     }
 
 
@@ -92,9 +100,9 @@ public class MainMenu extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }

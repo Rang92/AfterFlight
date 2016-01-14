@@ -9,4 +9,15 @@
         android:text="Home"
         android:id="@+id/frag_home"
         android:layout_gravity="center_horizontal|top" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/postButtonMain"
+        android:src="@drawable/rsz_add_car"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right|bottom" />
 </FrameLayout>
