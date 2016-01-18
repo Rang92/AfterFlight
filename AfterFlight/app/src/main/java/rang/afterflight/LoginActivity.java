@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,6 +81,7 @@ public class LoginActivity extends Activity {
                         } else {
                             // Start an intent for the dispatch activity
                             Intent intent = new Intent(LoginActivity.this, MainMenu.class);
+                            intent.putExtra("username", usernameView.getText().toString());
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         }

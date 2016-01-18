@@ -22,8 +22,6 @@ import rang.afterflight.R;
  */
 public class DemandFragment extends Fragment {
 
-//    MenuItem fav;
-
     ImageButton floatButton;
 
     @Nullable

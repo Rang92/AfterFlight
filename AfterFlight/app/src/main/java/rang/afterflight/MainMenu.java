@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -65,6 +66,13 @@ public class MainMenu extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        Intent intent = this.getIntent();
+        String username = intent.getStringExtra("username");
+
+        final TextView user = (TextView) findViewById(R.id.username_nav);
+        user.setText(username);
 
 
         FragmentManager fm = getFragmentManager();
@@ -127,8 +135,10 @@ public class MainMenu extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
             fm.beginTransaction().replace(R.id.content_main, new SettingsFragment()).commit();
         } else if (id == R.id.nav_logout) {
-//            Intent logOut = new Intent(getApplicationContext(), LoginActivity.class);
-//            startActivity(logOut);
+            ParseUser.logOut();
+            Intent back = new Intent(this, LoginActivity.class);
+            startActivity(back);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
