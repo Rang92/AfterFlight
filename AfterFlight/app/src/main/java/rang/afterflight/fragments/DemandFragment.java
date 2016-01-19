@@ -22,22 +22,10 @@ import rang.afterflight.R;
  */
 public class DemandFragment extends Fragment {
 
-    ImageButton floatButton;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_demand, container, false);
-
-        floatButton = (ImageButton)rootView.findViewById(R.id.postButtonDemand);
-        floatButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         return rootView;
     }
 
@@ -49,13 +37,4 @@ public class DemandFragment extends Fragment {
 
     }
 
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//        fav = menu.add("add");
-//        fav.setIcon(R.drawable.ic_menu_home);
-//        super.onCreateOptionsMenu(menu, inflater);
-        //MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.options_menu, menu);
-
-//        return true;
-    }
 }

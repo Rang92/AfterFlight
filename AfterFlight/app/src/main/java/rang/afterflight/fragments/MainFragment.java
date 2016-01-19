@@ -2,7 +2,6 @@ package rang.afterflight.fragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -29,7 +28,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getActivity().getFragmentManager();
-                fm.beginTransaction().replace(R.id.content_main, new AddPostFragment()).commit();
+                fm.beginTransaction().replace(R.id.content_main, new AirportPostFragment(getActivity())).commit();
             }
         });
 

@@ -3,11 +3,7 @@ package rang.afterflight;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,16 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.parse.ParseUser;
 
-import rang.afterflight.fragments.AddPostFragment;
 import rang.afterflight.fragments.DemandFragment;
 import rang.afterflight.fragments.MainFragment;
 import rang.afterflight.fragments.MessagesFragment;
-import rang.afterflight.fragments.PostsFragment;
+import rang.afterflight.fragments.MyPostsFragment;
 import rang.afterflight.fragments.SettingsFragment;
 
 public class MainMenu extends AppCompatActivity
@@ -79,7 +72,6 @@ public class MainMenu extends AppCompatActivity
         fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit();
 
 
-
     }
 
 
@@ -129,7 +121,7 @@ public class MainMenu extends AppCompatActivity
         } else if (id == R.id.nav_demand) {
             fm.beginTransaction().replace(R.id.content_main, new DemandFragment()).commit();
         } else if (id == R.id.nav_posts) {
-            fm.beginTransaction().replace(R.id.content_main, new PostsFragment()).commit();
+            fm.beginTransaction().replace(R.id.content_main, new MyPostsFragment()).commit();
         } else if (id == R.id.nav_messages) {
             fm.beginTransaction().replace(R.id.content_main, new MessagesFragment()).commit();
         } else if (id == R.id.nav_settings) {
@@ -145,44 +137,4 @@ public class MainMenu extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//
-//        // ATTENTION: This was auto-generated to implement the App Indexing API.
-//        // See https://g.co/AppIndexing/AndroidStudio for more information.
-//        client.connect();
-//        Action viewAction = Action.newAction(
-//                Action.TYPE_VIEW, // TODO: choose an action type.
-//                "MainMenu Page", // TODO: Define a title for the content shown.
-//                // TODO: If you have web page content that matches this app activity's content,
-//                // make sure this auto-generated web page URL is correct.
-//                // Otherwise, set the URL to null.
-//                Uri.parse("http://host/path"),
-//                // TODO: Make sure this auto-generated app deep link URI is correct.
-//                Uri.parse("android-app://rang.afterflight/http/host/path")
-//        );
-//        AppIndex.AppIndexApi.start(client, viewAction);
-//    }
-//
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//
-//        // ATTENTION: This was auto-generated to implement the App Indexing API.
-//        // See https://g.co/AppIndexing/AndroidStudio for more information.
-//        Action viewAction = Action.newAction(
-//                Action.TYPE_VIEW, // TODO: choose an action type.
-//                "MainMenu Page", // TODO: Define a title for the content shown.
-//                // TODO: If you have web page content that matches this app activity's content,
-//                // make sure this auto-generated web page URL is correct.
-//                // Otherwise, set the URL to null.
-//                Uri.parse("http://host/path"),
-//                // TODO: Make sure this auto-generated app deep link URI is correct.
-//                Uri.parse("android-app://rang.afterflight/http/host/path")
-//        );
-//        AppIndex.AppIndexApi.end(client, viewAction);
-//        client.disconnect();
-//    }
 }

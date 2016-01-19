@@ -13,8 +13,8 @@
                 android:title="Demand" />
             <item
                 android:id="@+id/nav_posts"
-                android:icon="@drawable/ic_menu_posts"
-                android:title="Posts" />
+                android:icon="@drawable/ic_menu_myposts"
+                android:title="My posts" />
             <item
                 android:id="@+id/nav_messages"
                 android:icon="@drawable/ic_menu_messages"

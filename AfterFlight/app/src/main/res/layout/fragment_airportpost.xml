@@ -6,17 +6,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Demand"
-        android:id="@+id/frag_demand"
+        android:text="Choose airport"
+        android:id="@+id/add_post"
         android:layout_gravity="center_horizontal|top"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <android.support.v7.widget.SearchView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/searchViewDemand"
-        android:layout_below="@+id/frag_demand"
+        android:id="@+id/search_airport"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_below="@+id/add_post"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -25,10 +26,9 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listDemand"
-        android:layout_below="@+id/searchViewDemand"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:choiceMode="singleChoice" />
+        android:id="@+id/listView_airports"
+        android:layout_below="@+id/search_airport"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
