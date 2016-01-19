@@ -16,6 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/search_airport"
+        android:hint="Airport name"
         android:layout_gravity="center_horizontal|top"
         android:layout_below="@+id/add_post"
         android:layout_alignParentLeft="true"

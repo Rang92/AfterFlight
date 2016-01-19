@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Username"
         android:ems="10"
         android:id="@+id/username"
         android:layout_alignParentTop="true"
@@ -23,7 +23,7 @@
         android:layout_below="@+id/username"
         android:layout_alignLeft="@+id/username"
         android:layout_alignStart="@+id/username"
-        android:text="Password" />
+        android:hint="Password" />
 
     <Button
         android:layout_width="wrap_content"

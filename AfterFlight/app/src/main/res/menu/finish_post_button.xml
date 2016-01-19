@@ -3,9 +3,9 @@
 
     <!-- "Mark Favorite", should appear as action button if possible -->
     <item
-        android:id="@+id/action_add_post"
-        android:icon="@drawable/ic_menu_next2"
-        android:title="Next"
+        android:id="@+id/add_post_finish"
+        android:icon="@drawable/ic_menu_finish"
+        android:title="Add"
         app:showAsAction="ifRoom"/>
 
 </menu>

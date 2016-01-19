@@ -14,7 +14,7 @@ import rang.afterflight.R;
 /**
  * Created by rang on 11-1-2016.
  */
-public class MainFragment extends Fragment implements View.OnClickListener{
+public class MainFragment extends Fragment{
 
     ImageButton floatButton;
 
@@ -33,10 +33,5 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         });
 
         return rootView;
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 }

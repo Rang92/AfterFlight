@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="airports_list">
-        <item>Adnan Menderes Airport</item>
-        <item>Adolfo Suarez Madrid Barajas Airport</item>
+        <item>Izmir Adnan Menderes Airport</item>
+        <item>Madrid Adolfo Suarez Barajas Airport</item>
         <item>Alicante Airport</item>
         <item>Amsterdam Airport Schiphol</item>
         <item>Antalya Airport</item>
@@ -14,42 +14,42 @@
         <item>Budapest Liszt Ferenc International Airport</item>
         <item>Cologne Bonn Airport</item>
         <item>Copenhagen Airport</item>
-        <item>Domodedovo International Airport</item>
+        <item>Moscow Domodedovo International Airport</item>
         <item>Dublin Airport</item>
         <item>Dusseldorf Airport</item>
         <item>Edinburgh Airport</item>
-        <item>Esenboga International Airport</item>
+        <item>Ankara Esenboga International Airport</item>
         <item>Frankfurt Airport</item>
-        <item>Frederic Chopin Airport</item>
+        <item>Warsaw Frederic Chopin Airport</item>
         <item>Geneva International Airport</item>
-        <item>Gran Canaria Airport/item></item>
+        <item>Gran Canaria Airport</item>
         <item>Hamburg Airport</item>
         <item>Helsinki Vantaa Airport</item>
         <item>Istanbul Ataturk Airport</item>
-        <item>Leonardo da Vinci Fiumicino Airport</item>
+        <item>Rome Leonardo da Vinci Fiumicino Airport</item>
         <item>Lisbon Portela Airport</item>
         <item>London Luton Airport</item>
         <item>London Stansted Airport</item>
         <item>London Gatwick Airport</item>
         <item>London Heathrow Airport</item>
-        <item>Malpensa Airport</item>
+        <item>Milan Malpensa Airport</item>
         <item>Manchester Airport</item>
         <item>Munich Airport</item>
         <item>Malaga Airport</item>
         <item>Nice Cote d'Azur Airport</item>
-        <item>Oslo Airport, Gardermoen</item>
+        <item>Oslo Airport Gardermoen</item>
         <item>Palma de Mallorca Airport</item>
         <item>Paris Charles de Gaulle Airport</item>
         <item>Paris Orly Airport</item>
-        <item>Pulkovo Airport</item>
-        <item>Sabiha Gokcen Airport</item>
-        <item>Sheremetyevo International Airport</item>
+        <item>Saint Petersburg Pulkovo Airport</item>
+        <item>Istanbul Sabiha Gokcen Airport</item>
+        <item>Moscow Sheremetyevo International Airport</item>
         <item>Stockholm Arlanda Airport</item>
         <item>Stuttgart Airport</item>
         <item>Tenerife South Airport</item>
         <item>Vienna International Airport</item>
-        <item>Vnukovo International Airport</item>
-        <item>Vaclav Havel Airport Prague</item>
+        <item>Moscow Vnukovo International Airport</item>
+        <item>Prague Vaclav Havel Airport</item>
         <item>Zurich Airport</item>
     </string-array>
 </resources>
