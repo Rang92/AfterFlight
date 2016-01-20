@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -52,7 +53,13 @@ public class AirportPostFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
                 FragmentManager fm = getActivity().getFragmentManager();
-                fm.beginTransaction().replace(R.id.content_main, new FinishPostFragment()).commit();
+                Fragment fragment = new FinishPostFragment();
+                Bundle bundle = new Bundle();
+                String itemString = listViewAirports.getItemAtPosition(position).toString();
+                Log.d("Item string", itemString);
+                bundle.putString("data", itemString);
+                fragment.setArguments(bundle);
+                fm.beginTransaction().replace(R.id.content_main, fragment).commit();
             }
         });
 

@@ -25,14 +25,20 @@
             android:hint="Airport"
             android:id="@+id/airport_finish" />
 
+        <Button
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:text="Select date"
+            android:id="@+id/pick_date"
+            android:layout_gravity="right" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
             android:ems="10"
             android:id="@+id/date_finish"
-            android:hint="Date"
-            android:layout_gravity="center_horizontal" />
+            android:hint="Date" />
 
         <EditText
             android:layout_width="match_parent"
@@ -62,5 +68,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/flightnr_finish"
             android:hint="Flight number"/>
+
     </LinearLayout>
 </RelativeLayout>
