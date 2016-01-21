@@ -21,15 +21,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="66dp" />
 
-    <SearchView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/homeCity"
-        android:layout_marginTop="66dp"
+        android:text="Change profile picture"
+        android:id="@+id/profilepic_button"
         android:layout_below="@+id/frag_settings"
-        android:layout_alignRight="@+id/frag_settings"
-        android:layout_alignEnd="@+id/frag_settings"
-        android:queryHint="Select your home city" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp" />
 
 
 </RelativeLayout>

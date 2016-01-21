@@ -35,15 +35,20 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date"
             android:ems="10"
             android:id="@+id/date_finish"
             android:hint="Date" />
 
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="98dp"
+            android:text="select time"
+            android:id="@+id/pick_time"
+            android:layout_gravity="right" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="time"
             android:hint="Time of arrival"
             android:ems="10"
             android:id="@+id/time_finish" />
