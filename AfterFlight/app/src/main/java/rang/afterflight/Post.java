@@ -3,26 +3,18 @@ package rang.afterflight;
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by rang on 21-1-16.
  */
 @ParseClassName("Post")
-public class Post extends ParseObject {
-    String airport, date, time, persons, address, flightnr;
+public class Post extends ParseObject implements Serializable {
 
-
-
-    public Post(String airport, String date, String time, String persons, String address, String flightnr){
+    public Post(){
         super();
-
-        this.airport = airport;
-        this.date = date;
-        this.time = time;
-        this.persons = persons;
-        this.address = address;
-        this.flightnr = flightnr;
     }
 
     public String getId(){
@@ -32,6 +24,18 @@ public class Post extends ParseObject {
     public void setId(String id){
         put("objectId", id);
     }
+
+    //////////
+
+    public String getUsername(){
+        return getString("username");
+    }
+
+    public void setUsername(String username){
+        put("username", username);
+    }
+
+
 
     public String getAirportParse(){
         return getString("airport");

@@ -14,8 +14,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import java.util.ArrayList;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import rang.afterflight.ListViewAdapter;
 import rang.afterflight.Post;
 import rang.afterflight.R;
 
@@ -27,6 +34,7 @@ public class DemandFragment extends Fragment {
 
     ListView lv;
     ArrayAdapter adapter;
+    ArrayList<Post> mijncode;
 
     @Nullable
     @Override
@@ -36,11 +44,9 @@ public class DemandFragment extends Fragment {
         if(rootView != null){
             lv = (ListView) rootView.findViewById(R.id.listDemand);
 
-            ArrayList<String> arraypost = getArguments().getStringArrayList("listPost");
-
-            adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, arraypost);
-
-            lv.setAdapter(adapter);
+//            adapter = new ListViewAdapter(getActivity(), R.layout.item_cardview, mijncode);
+//
+//            lv.setAdapter(adapter);
 
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -63,6 +69,35 @@ public class DemandFragment extends Fragment {
 
         setHasOptionsMenu(true);
 
-    }
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
 
+        mijncode = new ArrayList<Post>();
+
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> postList, ParseException e) {
+                if (e == null) {
+                    for (ParseObject object : postList) {
+                        Post newPost = new Post();
+
+                        newPost.setAirportParse((String) object.get("airport"));
+                        newPost.setDateParse((String) object.get("date"));
+                        newPost.setTimeParse((String) object.get("time"));
+                        newPost.setPersonsParse((String) object.get("persons"));
+                        newPost.setAddressParse((String) object.get("address"));
+                        newPost.setFlightnrParse((String) object.get("address"));
+//                        newPost.setUsername((String) object.get("username"));
+
+                        mijncode.add(newPost);
+
+
+                    }
+
+                    adapter = new ListViewAdapter(getActivity(), R.layout.item_cardview, mijncode);
+                    lv.setAdapter(adapter);
+                }
+            }
+        });
+    }
 }
+
+

@@ -53,7 +53,7 @@
                         android:id="@+id/item_airport"
                         android:contextClickable="false"
                         android:layout_centerVertical="true"
-                        android:textSize="18sp"
+                        android:textSize="14sp"
                         android:maxLines="1"
                         android:layout_weight="1"
                         android:layout_gravity="top" />

@@ -150,7 +150,8 @@ public class FinishPostFragment extends Fragment {
                 final Fragment fragment = new DemandFragment();
 
                 // put strings to listview in DemandFragment
-                ParseObject post = new ParseObject("Post");
+//                ParseObject post = new ParseObject("Post");
+                ParseObject post = ParseObject.create("Post");
 
                 post.put("airport", airport_finish.getText().toString());
                 post.put("date", date_finish.getText().toString());
@@ -162,39 +163,7 @@ public class FinishPostFragment extends Fragment {
                 post.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
-                        airport_finish.setText("");
-                        date_finish.setText("");
-                        time_finish.setText("");
-                        persons_finish.setText("");
-                        address_finish.setText("");
-                        flightnr_finish.setText("");
-
-                        ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
-                        query.findInBackground(new FindCallback<ParseObject>() {
-                            public void done(List<ParseObject> postList, ParseException e) {
-                                if (e == null) {
-                                    ArrayList arrayPost = new ArrayList<String>();
-
-                                    for (ParseObject j : postList) {
-
-                                        arrayPost.add(j.getString("airport"));
-                                        arrayPost.add(j.getString("date"));
-                                        arrayPost.add(j.getString("time"));
-                                        arrayPost.add(j.getString("persons"));
-                                        arrayPost.add(j.getString("address"));
-                                        arrayPost.add(j.getString("flightnr"));
-                                    }
-
-                                    Bundle bundle = new Bundle();
-                                    bundle.putStringArrayList("listPost", arrayPost);
-                                    fragment.setArguments(bundle);
-                                    fm.beginTransaction().replace(R.id.content_main, fragment).commit();
-
-                                } else {
-                                    // error
-                                }
-                            }
-                        });
+                        fm.beginTransaction().replace(R.id.content_main, fragment).commit();
                     }
                 });
 
