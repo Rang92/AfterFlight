@@ -7,20 +7,12 @@ AfterFlight - Find someone that wants to pick you up from the airport and make a
 #### Features
 * Account
   * Log in
-  * Forgot password
   * Register
 * Settings 
-  * Home city
-  * Change password
-* Chat or push notifications
+  * Change profile picture
+* Push notification
   * After post is accepted
 * Post service
-  * Supply 
-  	* Airport location(s)
-  	* Work period
-  	* Time shift(s)
-  	* Car size
-  	* Max km to drive
   * Demand
   	* Airport location
   	* Date
@@ -28,6 +20,7 @@ AfterFlight - Find someone that wants to pick you up from the airport and make a
   	* Number of persons
   	* Address of final destination
 * Accept/decline service
+* Rate service
 
 #### Problem solved
 AfterFlight is the best solution to bring you to your final destination after travelling by plane. 
