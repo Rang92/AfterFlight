@@ -27,6 +27,7 @@ public class DateDialogFragment extends DialogFragment{
 
     public DateDialogFragment(){}
 
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -39,6 +40,7 @@ public class DateDialogFragment extends DialogFragment{
         // Create a new instance of DatePickerDialog and return it
         return new DatePickerDialog(getActivity(), onDateSet, year, month, day);
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,7 +58,6 @@ public class DateDialogFragment extends DialogFragment{
     public void setCallBack(DatePickerDialog.OnDateSetListener onDate) {
         onDateSet = onDate;
     }
-
 }
 
 

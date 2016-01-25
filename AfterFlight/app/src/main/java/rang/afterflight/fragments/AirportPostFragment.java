@@ -9,9 +9,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -55,25 +52,21 @@ public class AirportPostFragment extends Fragment {
                 FragmentManager fm = getActivity().getFragmentManager();
                 Fragment fragment = new FinishPostFragment();
                 Bundle bundle = new Bundle();
-                String itemString = listViewAirports.getItemAtPosition(position).toString();
-                Log.d("Item string", itemString);
+                String itemString = listViewAirports.getItemAtPosition(position).toString();;
                 bundle.putString("data", itemString);
                 fragment.setArguments(bundle);
                 fm.beginTransaction().replace(R.id.content_main, fragment).commit();
             }
         });
-
         searchAirport();
         return rootView;
     }
-
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
         try {
             airport_list = readFeed();
         } catch (XmlPullParserException e) {
@@ -81,9 +74,9 @@ public class AirportPostFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         stringsList = (String[]) airport_list.toArray( new String[airport_list.size()]);
     }
+
 
     public void searchAirport(){
         editSearch.addTextChangedListener(new TextWatcher() {
@@ -105,34 +98,11 @@ public class AirportPostFragment extends Fragment {
     }
 
 
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//        inflater.inflate(R.menu.finish_post_button, menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.add_post_finish:
-//                // User chose the "Favorite" action, mark the current item
-//                // as a favorite...
-//                FragmentManager fm = getActivity().getFragmentManager();
-//                fm.beginTransaction().replace(R.id.content_main, new DemandFragment()).commit();
-//                return true;
-//
-//            default:
-//                // If we got here, the user's action was not recognized.
-//                // Invoke the superclass to handle it.
-//                return super.onOptionsItemSelected(item);
-//
-//        }
-//    }
-
-
-
     public AirportPostFragment(Context context){
         myContext = context;
         parser = myContext.getResources().getXml(R.xml.airports);
     }
+
 
     // parse xml file and return the list
     HashSet<String> readFeed() throws XmlPullParserException, IOException {
@@ -149,7 +119,6 @@ public class AirportPostFragment extends Fragment {
             }
             parser.next();
         }
-//        Log.d("Listtest", " " + list);
         return list;
     }
 }

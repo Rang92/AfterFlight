@@ -6,23 +6,36 @@ import android.app.FragmentManager;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.SaveCallback;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import rang.afterflight.Post;
 import rang.afterflight.R;
 
 /**
  * Created by rang on 11-1-2016.
  */
 public class FinishPostFragment extends Fragment {
+    private Post mPost;
 
     EditText airport_finish, date_finish, time_finish,
             persons_finish, address_finish, flightnr_finish;
@@ -39,6 +52,7 @@ public class FinishPostFragment extends Fragment {
         time_finish = (EditText) rootView.findViewById(R.id.time_finish);
         persons_finish = (EditText) rootView.findViewById(R.id.persons_finish);
         address_finish = (EditText) rootView.findViewById(R.id.address_finish);
+        flightnr_finish = (EditText) rootView.findViewById(R.id.flightnr_finish);
 
         dateButton = (Button) rootView.findViewById(R.id.pick_date);
         timeButton = (Button) rootView.findViewById(R.id.pick_time);
@@ -61,6 +75,8 @@ public class FinishPostFragment extends Fragment {
                 timeDialogFragment(v);
             }
         });
+
+
 
         return rootView;
     }
@@ -130,8 +146,58 @@ public class FinishPostFragment extends Fragment {
             case R.id.add_post_finish:
                 // User chose the "Favorite" action, mark the current item
                 // as a favorite...
-                FragmentManager fm = getActivity().getFragmentManager();
-                fm.beginTransaction().replace(R.id.content_main, new DemandFragment()).commit();
+                final FragmentManager fm = getActivity().getFragmentManager();
+                final Fragment fragment = new DemandFragment();
+
+                // put strings to listview in DemandFragment
+                ParseObject post = new ParseObject("Post");
+
+                post.put("airport", airport_finish.getText().toString());
+                post.put("date", date_finish.getText().toString());
+                post.put("time", time_finish.getText().toString());
+                post.put("persons", persons_finish.getText().toString());
+                post.put("address", address_finish.getText().toString());
+                post.put("flightnr", flightnr_finish.getText().toString());
+
+                post.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        airport_finish.setText("");
+                        date_finish.setText("");
+                        time_finish.setText("");
+                        persons_finish.setText("");
+                        address_finish.setText("");
+                        flightnr_finish.setText("");
+
+                        ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
+                        query.findInBackground(new FindCallback<ParseObject>() {
+                            public void done(List<ParseObject> postList, ParseException e) {
+                                if (e == null) {
+                                    ArrayList arrayPost = new ArrayList<String>();
+
+                                    for (ParseObject j : postList) {
+
+                                        arrayPost.add(j.getString("airport"));
+                                        arrayPost.add(j.getString("date"));
+                                        arrayPost.add(j.getString("time"));
+                                        arrayPost.add(j.getString("persons"));
+                                        arrayPost.add(j.getString("address"));
+                                        arrayPost.add(j.getString("flightnr"));
+                                    }
+
+                                    Bundle bundle = new Bundle();
+                                    bundle.putStringArrayList("listPost", arrayPost);
+                                    fragment.setArguments(bundle);
+                                    fm.beginTransaction().replace(R.id.content_main, fragment).commit();
+
+                                } else {
+                                    // error
+                                }
+                            }
+                        });
+                    }
+                });
+
                 return true;
 
             default:

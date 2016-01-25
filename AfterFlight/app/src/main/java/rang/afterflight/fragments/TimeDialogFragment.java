@@ -19,9 +19,8 @@ import rang.afterflight.R;
  */
 public class TimeDialogFragment extends DialogFragment {
 
-    TimePicker time;
-
     TimePickerDialog.OnTimeSetListener onTimeSet;
+
     public boolean isModal = false;
 
     public static TimeDialogFragment newInstance()
