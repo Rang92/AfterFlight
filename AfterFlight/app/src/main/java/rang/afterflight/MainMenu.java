@@ -1,8 +1,9 @@
 package rang.afterflight;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.parse.GetDataCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseUser;
 
 import rang.afterflight.fragments.DemandFragment;
@@ -26,14 +31,12 @@ import rang.afterflight.fragments.SettingsFragment;
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Fragment someFragment;
-
-
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +44,6 @@ public class MainMenu extends AppCompatActivity
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -67,10 +61,8 @@ public class MainMenu extends AppCompatActivity
         final TextView user = (TextView) findViewById(R.id.username_nav);
         user.setText(username);
 
-
         FragmentManager fm = getFragmentManager();
         fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit();
-
 
     }
 
@@ -97,12 +89,7 @@ public class MainMenu extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
+        // get parse profile picture
 
         return super.onOptionsItemSelected(item);
     }

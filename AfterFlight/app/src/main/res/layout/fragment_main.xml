@@ -8,6 +8,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Home"
         android:id="@+id/frag_home"
+        android:layout_marginTop="5dp"
+        android:textColor="#045FB4"
         android:layout_gravity="center_horizontal|top" />
 
     <ImageButton

@@ -8,8 +8,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Settings"
         android:id="@+id/frag_settings"
+        android:textColor="#045FB4"
         android:layout_gravity="center_horizontal|top"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -17,6 +19,7 @@
         android:layout_height="wrap_content"
         android:text="Save settings"
         android:id="@+id/save_settings"
+        android:textColor="#045FB4"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="66dp" />
@@ -26,6 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Change profile picture"
         android:id="@+id/profilepic_button"
+        android:textColor="#045FB4"
         android:layout_above="@+id/save_settings"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp" />

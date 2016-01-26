@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,21 +14,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
-
-import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
-import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import rang.afterflight.Post;
 import rang.afterflight.R;
 
@@ -35,8 +29,6 @@ import rang.afterflight.R;
  * Created by rang on 11-1-2016.
  */
 public class FinishPostFragment extends Fragment {
-    private Post mPost;
-
     EditText airport_finish, date_finish, time_finish,
             persons_finish, address_finish, flightnr_finish;
 
@@ -150,7 +142,6 @@ public class FinishPostFragment extends Fragment {
                 final Fragment fragment = new DemandFragment();
 
                 // put strings to listview in DemandFragment
-//                ParseObject post = new ParseObject("Post");
                 ParseObject post = ParseObject.create("Post");
 
                 post.put("airport", airport_finish.getText().toString());
@@ -159,13 +150,52 @@ public class FinishPostFragment extends Fragment {
                 post.put("persons", persons_finish.getText().toString());
                 post.put("address", address_finish.getText().toString());
                 post.put("flightnr", flightnr_finish.getText().toString());
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                post.put("username", currentUser.getUsername());
+                if(currentUser.getParseFile("profilepic") != null){
+                    post.put("profilepic", currentUser.getParseFile("profilepic"));
+                }
 
-                post.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        fm.beginTransaction().replace(R.id.content_main, fragment).commit();
-                    }
-                });
+                String dateString = date_finish.getText().toString();
+                String timeString = time_finish.getText().toString();
+                String personsString = persons_finish.getText().toString();
+                String addressString = address_finish.getText().toString();
+                String flightnrString = flightnr_finish.getText().toString();
+
+                // Snackbar if date EditText is empty
+                if (dateString.trim().equals("")) {
+                    Snackbar.make(getView(), "Do not forget the date!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                // Snackbar if time EditText is empty
+                else if(timeString.trim().equals("")){
+                    Snackbar.make(getView(), "Do not forget the time!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                // Snackbar if persons EditText is empty
+                else if(personsString.trim().equals("")){
+                    Snackbar.make(getView(), "Do not forget the number of persons!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                // Snackbar if address EditText is empty
+                else if(addressString.trim().equals("")){
+                    Snackbar.make(getView(), "Do not forget the address of your final destination!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                // Snackbar if flight number EditText is empty
+                else if(flightnrString.trim().equals("")){
+                    Snackbar.make(getView(), "Do not forget your flight number!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                // Else add post
+                else{
+                    post.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            fm.beginTransaction().replace(R.id.content_main, fragment).commit();
+                        }
+                    });
+                }
 
                 return true;
 

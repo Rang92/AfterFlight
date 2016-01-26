@@ -23,12 +23,10 @@
             android:orientation="horizontal"
             android:weightSum="1">
 
-
             <com.parse.ParseImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:id="@+id/item_image"
-                android:src="@android:drawable/sym_def_app_icon"
                 android:maxHeight="100dp"
                 android:maxWidth="150dp" />
 
@@ -53,19 +51,11 @@
                         android:id="@+id/item_airport"
                         android:contextClickable="false"
                         android:layout_centerVertical="true"
-                        android:textSize="14sp"
+                        android:textSize="10sp"
                         android:maxLines="1"
                         android:layout_weight="1"
                         android:layout_gravity="top" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Username"
-                        android:id="@+id/item_username"
-                        android:textColor="#424242"
-                        android:layout_weight="1" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -80,6 +70,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:text="Date"
+                        android:textSize="10sp"
                         android:id="@+id/item_date"
                         android:textColor="#000000"
                         android:layout_weight="1" />
@@ -90,7 +81,8 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2">
+                    android:weightSum="1"
+                    android:layout_weight="3">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -98,8 +90,19 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:text="Time"
                         android:id="@+id/item_time"
+                        android:textSize="10sp"
                         android:textColor="#000000"
                         android:layout_weight="1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Username"
+                        android:textSize="10sp"
+                        android:id="@+id/item_username"
+                        android:textColor="#424242"
+                        android:layout_weight="1" />
 
                 </LinearLayout>
 
@@ -109,4 +112,5 @@
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
+
 </FrameLayout>

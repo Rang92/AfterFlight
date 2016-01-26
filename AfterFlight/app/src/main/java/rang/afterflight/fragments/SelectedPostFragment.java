@@ -12,12 +12,12 @@ import rang.afterflight.R;
 /**
  * Created by rang on 11-1-2016.
  */
-public class ViewPostFragment extends Fragment {
+public class SelectedPostFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_viewpost, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_selectedpost, container, false);
 
 
 

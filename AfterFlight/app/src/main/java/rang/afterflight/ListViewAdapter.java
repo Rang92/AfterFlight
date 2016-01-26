@@ -8,11 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.parse.GetDataCallback;
 import com.parse.ParseImageView;
-
-import java.text.ParseException;
 import java.util.ArrayList;
 
 /**
@@ -57,9 +53,10 @@ public class ListViewAdapter extends ArrayAdapter<Post> {
         holder.date.setText(item.getDateParse());
         holder.time.setText(item.getTimeParse());
         holder.username.setText(item.getUsername());
+        holder.imageItem.setImageBitmap(item.getImageFile());
 
         if (item.getImageFile() != null) {
-            holder.imageItem.setParseFile(item.getImageFile());
+            holder.imageItem.setImageBitmap(item.getImageFile());
         } else {
             holder.imageItem.setImageResource(R.drawable.profilepicture);
             holder.imageItem.setScaleType(ImageView.ScaleType.FIT_CENTER);

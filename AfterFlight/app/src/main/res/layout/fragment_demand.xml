@@ -8,15 +8,19 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Demand"
         android:id="@+id/frag_demand"
+        android:layout_marginTop="5dp"
+        android:textColor="#045FB4"
         android:layout_gravity="center_horizontal|top"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <android.support.v7.widget.SearchView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/searchViewDemand"
+        android:id="@+id/search_post"
+        android:hint="Search post"
         android:layout_below="@+id/frag_demand"
+        android:textColor="#045FB4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -26,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listDemand"
-        android:layout_below="@+id/searchViewDemand"
+        android:layout_below="@+id/search_post"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:choiceMode="singleChoice" />

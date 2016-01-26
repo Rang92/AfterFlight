@@ -8,6 +8,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Finish post"
         android:id="@+id/frag_finish"
+        android:textColor="#045FB4"
         android:layout_gravity="center_horizontal|top"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -23,12 +24,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Airport"
+            android:textColor="#045FB4"
             android:id="@+id/airport_finish" />
 
         <Button
             android:layout_width="98dp"
             android:layout_height="wrap_content"
             android:text="Select date"
+            android:textColor="#045FB4"
             android:id="@+id/pick_date"
             android:layout_gravity="right" />
 
@@ -36,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="#045FB4"
             android:id="@+id/date_finish"
             android:hint="Date" />
 
@@ -43,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_width="98dp"
             android:text="select time"
+            android:textColor="#045FB4"
             android:id="@+id/pick_time"
             android:layout_gravity="right" />
 
@@ -51,6 +56,7 @@
             android:layout_height="wrap_content"
             android:hint="Time of arrival"
             android:ems="10"
+            android:textColor="#045FB4"
             android:id="@+id/time_finish" />
 
         <EditText
@@ -59,6 +65,7 @@
             android:inputType="number"
             android:hint="Number of persons"
             android:ems="10"
+            android:textColor="#045FB4"
             android:id="@+id/persons_finish"
             android:layout_gravity="center_horizontal" />
 
@@ -66,12 +73,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/address_finish"
+            android:textColor="#045FB4"
             android:hint="Address of final destination"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/flightnr_finish"
+            android:textColor="#045FB4"
             android:hint="Flight number"/>
 
     </LinearLayout>

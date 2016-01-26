@@ -87,7 +87,8 @@ public class RegisterActivity extends Activity {
                         // if there isn´t an error
                         } else {
                             // Start an intent for the dispatch activity
-                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            Intent intent = new Intent(RegisterActivity.this, MainMenu.class);
+                            intent.putExtra("username", usernameView.getText().toString());
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         }

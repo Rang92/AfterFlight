@@ -1,6 +1,10 @@
 package rang.afterflight;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import com.parse.ParseClassName;
+import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 
@@ -101,13 +105,23 @@ public class Post extends ParseObject implements Serializable {
     }
 
 
-    public ParseFile getImageFile(){
-        return getParseFile("image");
+    public Bitmap getImageFile(){
+        Bitmap bmp = null;
+        ParseFile image = getParseFile("profilepic");
+        if(image != null){
+            try {
+                byte[] data = image.getData();
+                bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                }
+        }
+        return bmp;
     }
 
     public void setImageFile(ParseFile file) {
         if (file != null) {
-            put("image", file);
+            put("profilepic", file);
         }
     }
 
