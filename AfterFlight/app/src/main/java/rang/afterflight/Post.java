@@ -2,6 +2,8 @@ package rang.afterflight;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.parse.ParseClassName;
 import com.parse.ParseException;
@@ -12,10 +14,12 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by rang on 21-1-16.
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
  */
 @ParseClassName("Post")
-public class Post extends ParseObject implements Serializable {
+public class Post extends ParseObject implements Serializable, Parcelable {
 
     public Post(){
         super();
@@ -104,6 +108,16 @@ public class Post extends ParseObject implements Serializable {
         put("flightnr", flightnr);
     }
 
+    public String getContactParse(){
+        return getString("contact");
+    }
+
+    public void setContactParse(String contact){
+        if(contact != null){
+            put("contact", contact);
+        }
+    }
+
 
     public Bitmap getImageFile(){
         Bitmap bmp = null;
@@ -126,11 +140,29 @@ public class Post extends ParseObject implements Serializable {
     }
 
 
-    public List<String> getPosts(){
-        return getList("Post");
+    @Override
+    public int describeContents() {
+        return 0;
     }
-    public void setIngredients(List<String> postsLists){
-        if (postsLists != null)
-            put("Post", postsLists);
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeString(getAirportParse());
+//        dest.writeString(getAddressParse());
     }
+
+    protected Post(Parcel in) {
+//        setAirportParse(in.readString());
+//        setAddressParse(in.readString());
+    }
+
+    public static final Parcelable.Creator<Post> CREATOR = new Parcelable.Creator<Post>() {
+        public Post createFromParcel(Parcel source) {
+            return new Post(source);
+        }
+
+        public Post[] newArray(int size) {
+            return new Post[size];
+        }
+    };
 }

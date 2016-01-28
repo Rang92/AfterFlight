@@ -14,9 +14,10 @@ import com.parse.ParseUser;
 
 
 /**
- * Created by rang on 12-1-16.
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
  */
-
 public class LoginActivity extends Activity {
 
     private EditText usernameView;

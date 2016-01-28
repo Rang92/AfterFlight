@@ -15,7 +15,9 @@ import rang.afterflight.R;
 
 
 /**
- * Created by rang on 20-1-16.
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
  */
 public class TimeDialogFragment extends DialogFragment {
 

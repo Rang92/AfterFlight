@@ -4,6 +4,11 @@ import android.app.Application;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
+/**
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
+ */
 public class ParseApp extends Application {
 
     public void onCreate() {

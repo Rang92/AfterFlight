@@ -22,7 +22,9 @@ import java.util.HashSet;
 import rang.afterflight.R;
 
 /**
- * Created by rang on 11-1-2016.
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
  */
 public class AirportPostFragment extends Fragment {
 

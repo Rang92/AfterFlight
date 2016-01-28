@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,26 +15,23 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.parse.GetDataCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
-
 import java.io.ByteArrayOutputStream;
-
-import rang.afterflight.MainMenu;
 import rang.afterflight.R;
 
 /**
- * Created by rang on 11-1-2016.
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
  */
 public class SettingsFragment extends Fragment {
     private static final int FROM_GALLERY = 1;

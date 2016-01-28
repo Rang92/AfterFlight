@@ -7,6 +7,11 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
+/**
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
+ */
 public class Splashscreen extends Activity {
 
     private static int splashInterval = 2000;

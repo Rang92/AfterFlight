@@ -20,7 +20,6 @@
         android:hint="Airport name"
         android:layout_gravity="center_horizontal|top"
         android:layout_below="@+id/add_post"
-        android:textColorHint="#045FB4"
         android:textColor="#045FB4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

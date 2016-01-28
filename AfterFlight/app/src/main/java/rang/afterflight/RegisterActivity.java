@@ -12,6 +12,11 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+/**
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
+ */
 public class RegisterActivity extends Activity {
 
     private EditText usernameView;

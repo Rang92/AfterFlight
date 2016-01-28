@@ -28,6 +28,11 @@ import rang.afterflight.fragments.MessagesFragment;
 import rang.afterflight.fragments.MyPostsFragment;
 import rang.afterflight.fragments.SettingsFragment;
 
+/**
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
+ */
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -109,9 +114,7 @@ public class MainMenu extends AppCompatActivity
             fm.beginTransaction().replace(R.id.content_main, new DemandFragment()).commit();
         } else if (id == R.id.nav_posts) {
             fm.beginTransaction().replace(R.id.content_main, new MyPostsFragment()).commit();
-        } else if (id == R.id.nav_messages) {
-            fm.beginTransaction().replace(R.id.content_main, new MessagesFragment()).commit();
-        } else if (id == R.id.nav_settings) {
+        }  else if (id == R.id.nav_settings) {
             fm.beginTransaction().replace(R.id.content_main, new SettingsFragment()).commit();
         } else if (id == R.id.nav_logout) {
             ParseUser.logOut();

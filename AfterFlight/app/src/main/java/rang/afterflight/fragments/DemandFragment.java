@@ -4,9 +4,11 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +33,9 @@ import rang.afterflight.R;
 
 
 /**
- * Created by rang on 11-1-2016.
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
  */
 public class DemandFragment extends Fragment {
 
@@ -54,8 +58,12 @@ public class DemandFragment extends Fragment {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     // clicked on item show post
+                    Post selectedPost = postArrayList.get(position);
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("data", (Parcelable) selectedPost);
                     FragmentManager fm = getActivity().getFragmentManager();
                     Fragment fragment = new rang.afterflight.fragments.SelectedPostFragment();
+                    fragment.setArguments(bundle);
                     fm.beginTransaction().replace(R.id.content_main, fragment).commit();
                 }
             });
@@ -105,9 +113,10 @@ public class DemandFragment extends Fragment {
                         newPost.setTimeParse((String) object.get("time"));
                         newPost.setPersonsParse((String) object.get("persons"));
                         newPost.setAddressParse((String) object.get("address"));
-                        newPost.setFlightnrParse((String) object.get("address"));
+                        newPost.setFlightnrParse((String) object.get("flightnr"));
                         newPost.setUsername((String) object.get("username"));
                         newPost.setImageFile((ParseFile) object.get("profilepic"));
+                        newPost.setContactParse((String) object.get("contact"));
 
                         postArrayList.add(newPost);
                     }

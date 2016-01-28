@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -26,11 +27,13 @@ import rang.afterflight.Post;
 import rang.afterflight.R;
 
 /**
- * Created by rang on 11-1-2016.
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
  */
 public class FinishPostFragment extends Fragment {
-    EditText airport_finish, date_finish, time_finish,
-            persons_finish, address_finish, flightnr_finish;
+    EditText persons_finish, address_finish, flightnr_finish, contact_finish;
+    TextView airport_finish, date_finish, time_finish;
 
     Button dateButton, timeButton;
 
@@ -39,12 +42,13 @@ public class FinishPostFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_finishpost, container, false);
 
-        airport_finish = (EditText) rootView.findViewById(R.id.airport_finish);
-        date_finish = (EditText) rootView.findViewById(R.id.date_finish);
-        time_finish = (EditText) rootView.findViewById(R.id.time_finish);
+        airport_finish = (TextView) rootView.findViewById(R.id.airport_finish);
+        date_finish = (TextView) rootView.findViewById(R.id.date_finish);
+        time_finish = (TextView) rootView.findViewById(R.id.time_finish);
         persons_finish = (EditText) rootView.findViewById(R.id.persons_finish);
         address_finish = (EditText) rootView.findViewById(R.id.address_finish);
         flightnr_finish = (EditText) rootView.findViewById(R.id.flightnr_finish);
+        contact_finish = (EditText) rootView.findViewById(R.id.contact_finish);
 
         dateButton = (Button) rootView.findViewById(R.id.pick_date);
         timeButton = (Button) rootView.findViewById(R.id.pick_time);
@@ -150,6 +154,7 @@ public class FinishPostFragment extends Fragment {
                 post.put("persons", persons_finish.getText().toString());
                 post.put("address", address_finish.getText().toString());
                 post.put("flightnr", flightnr_finish.getText().toString());
+                post.put("contact", contact_finish.getText().toString());
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 post.put("username", currentUser.getUsername());
                 if(currentUser.getParseFile("profilepic") != null){
@@ -161,6 +166,7 @@ public class FinishPostFragment extends Fragment {
                 String personsString = persons_finish.getText().toString();
                 String addressString = address_finish.getText().toString();
                 String flightnrString = flightnr_finish.getText().toString();
+                String contactString = contact_finish.getText().toString();
 
                 // Snackbar if date EditText is empty
                 if (dateString.trim().equals("")) {
@@ -187,11 +193,18 @@ public class FinishPostFragment extends Fragment {
                     Snackbar.make(getView(), "Do not forget your flight number!", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
+                // Snackbar if flight number EditText is empty
+                else if(contactString.trim().equals("")){
+                    Snackbar.make(getView(), "Do not forget your Email address or Phone Number!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
                 // Else add post
                 else{
                     post.saveInBackground(new SaveCallback() {
                         @Override
                         public void done(ParseException e) {
+                            Snackbar.make(getView(), "Your post has been successfully published!", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
                             fm.beginTransaction().replace(R.id.content_main, fragment).commit();
                         }
                     });

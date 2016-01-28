@@ -2,6 +2,7 @@ package rang.afterflight;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,9 @@ import com.parse.ParseImageView;
 import java.util.ArrayList;
 
 /**
- * Created by rang on 25-1-16.
+ * Rang Salih
+ * rangsalih@gmail.com
+ * 10690972
  */
 public class ListViewAdapter extends ArrayAdapter<Post> {
     Context context;
@@ -43,6 +46,7 @@ public class ListViewAdapter extends ArrayAdapter<Post> {
             holder.time = (TextView) row.findViewById(R.id.item_time);
             holder.username = (TextView) row.findViewById(R.id.item_username);
 
+
             row.setTag(holder);
         } else { // recycle view if any
             holder = (RecordHolder) row.getTag();
@@ -55,10 +59,11 @@ public class ListViewAdapter extends ArrayAdapter<Post> {
         holder.username.setText(item.getUsername());
         holder.imageItem.setImageBitmap(item.getImageFile());
 
+
         if (item.getImageFile() != null) {
             holder.imageItem.setImageBitmap(item.getImageFile());
         } else {
-            holder.imageItem.setImageResource(R.drawable.profilepicture);
+            holder.imageItem.setImageResource(R.drawable.noprofilepicture);
             holder.imageItem.setScaleType(ImageView.ScaleType.FIT_CENTER);
         }
 
