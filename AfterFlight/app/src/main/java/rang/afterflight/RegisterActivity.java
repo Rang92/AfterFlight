@@ -16,6 +16,7 @@ import com.parse.SignUpCallback;
  * Rang Salih
  * rangsalih@gmail.com
  * 10690972
+ * https://www.youtube.com/watch?v=B_FM9cggf8M
  */
 public class RegisterActivity extends Activity {
 
@@ -33,6 +34,10 @@ public class RegisterActivity extends Activity {
         passwordView = (EditText) findViewById(R.id.password1);
         passwordAgainView = (EditText) findViewById(R.id.password2);
 
+        registerClicked();
+    }
+
+    public void registerClicked(){
         // Set up the submit button click handler
         findViewById(R.id.register_button).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -64,7 +69,8 @@ public class RegisterActivity extends Activity {
 
                 // If there is a validation error, display the error
                 if (validationError) {
-                    Toast.makeText(RegisterActivity.this, validationErrorMessage.toString(), Toast.LENGTH_LONG)
+                    Toast.makeText(RegisterActivity.this, validationErrorMessage.toString(),
+                            Toast.LENGTH_LONG)
                             .show();
                     return;
                 }
@@ -72,7 +78,7 @@ public class RegisterActivity extends Activity {
                 // Set up a progress dialog
                 final ProgressDialog dlg = new ProgressDialog(RegisterActivity.this);
                 dlg.setTitle("Please wait.");
-                dlg.setMessage("Signing up.  Please wait.");
+                dlg.setMessage("Signing up.....");
                 dlg.show();
 
                 // Set up a new Parse user
@@ -88,13 +94,15 @@ public class RegisterActivity extends Activity {
                         // if there is an error
                         if (e != null) {
                             // Show the error message
-                            Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                        // if there isn´t an error
+                            Toast.makeText(RegisterActivity.this, e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                            // if there isn´t an error
                         } else {
                             // Start an intent for the dispatch activity
                             Intent intent = new Intent(RegisterActivity.this, MainMenu.class);
                             intent.putExtra("username", usernameView.getText().toString());
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                    Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         }
                     }

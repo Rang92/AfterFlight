@@ -4,14 +4,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import com.parse.ParseClassName;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
-
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Rang Salih
@@ -147,13 +144,9 @@ public class Post extends ParseObject implements Serializable, Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeString(getAirportParse());
-//        dest.writeString(getAddressParse());
     }
 
     protected Post(Parcel in) {
-//        setAirportParse(in.readString());
-//        setAddressParse(in.readString());
     }
 
     public static final Parcelable.Creator<Post> CREATOR = new Parcelable.Creator<Post>() {

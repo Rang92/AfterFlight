@@ -11,6 +11,7 @@ import android.view.WindowManager;
  * Rang Salih
  * rangsalih@gmail.com
  * 10690972
+ * https://www.youtube.com/watch?v=gARkm1GYtko
  */
 public class Splashscreen extends Activity {
 
@@ -26,24 +27,12 @@ public class Splashscreen extends Activity {
         setContentView(R.layout.splashscreen);
 
         new Handler().postDelayed(new Runnable() {
-
-
             @Override
             public void run() {
-                // TODO Auto-generated method stub
                 Intent i = new Intent(Splashscreen.this, LoginActivity.class);
                 startActivity(i);
-
-
-                this.finish();
-            }
-
-            private void finish() {
-                // TODO Auto-generated method stub
-
             }
         }, splashInterval);
-
-    };
+    }
 
 }

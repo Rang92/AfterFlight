@@ -7,7 +7,6 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,7 +22,6 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-import rang.afterflight.Post;
 import rang.afterflight.R;
 
 /**
@@ -34,12 +32,14 @@ import rang.afterflight.R;
 public class FinishPostFragment extends Fragment {
     EditText persons_finish, address_finish, flightnr_finish, contact_finish;
     TextView airport_finish, date_finish, time_finish;
-
     Button dateButton, timeButton;
+    DateDialogFragment dpf;
+    TimeDialogFragment tdf;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_finishpost, container, false);
 
         airport_finish = (TextView) rootView.findViewById(R.id.airport_finish);
@@ -57,22 +57,8 @@ public class FinishPostFragment extends Fragment {
         String data = getArguments().getString("data");
         airport_finish.setText(data);
 
-        dateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dateDialogFragment(v);
-            }
-        });
-
-        timeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // view TimePickerDialog
-                timeDialogFragment(v);
-            }
-        });
-
-
+        clickOnDateButton();
+        clickOnTimeButton();
 
         return rootView;
     }
@@ -83,8 +69,27 @@ public class FinishPostFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+    public void clickOnDateButton(){
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dateDialogFragment(v);
+            }
+        });
+    }
+
+    public void clickOnTimeButton(){
+        timeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // view TimePickerDialog
+                timeDialogFragment(v);
+            }
+        });
+    }
+
     public void dateDialogFragment(View v){
-        DateDialogFragment dpf = new DateDialogFragment().newInstance();
+        dpf = new DateDialogFragment().newInstance();
         dpf.setCallBack(onDate);
         dpf.show(getFragmentManager().beginTransaction(), "DatePickerFragment");
     }
@@ -99,8 +104,9 @@ public class FinishPostFragment extends Fragment {
         }
     };
 
+
     public void timeDialogFragment(View v){
-        TimeDialogFragment tdf = new TimeDialogFragment().newInstance();
+        tdf = new TimeDialogFragment().newInstance();
         tdf.setCallBack(onTime);
         tdf.show(getFragmentManager().beginTransaction(), "TimePickerFragment");
     }
@@ -109,6 +115,7 @@ public class FinishPostFragment extends Fragment {
         @Override
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
+            // add 0 to get two numbers
             String hourString;
             if (hourOfDay < 10) {
                 hourString = "0" + hourOfDay;
@@ -117,6 +124,7 @@ public class FinishPostFragment extends Fragment {
                 hourString = "" + hourOfDay;
             }
 
+            // add 0 to get two numbers
             String minuteString;
             if (minute < 10) {
                 minuteString = "0" + minute;
@@ -140,8 +148,6 @@ public class FinishPostFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_post_finish:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
                 final FragmentManager fm = getActivity().getFragmentManager();
                 final Fragment fragment = new DemandFragment();
 
@@ -157,6 +163,8 @@ public class FinishPostFragment extends Fragment {
                 post.put("contact", contact_finish.getText().toString());
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 post.put("username", currentUser.getUsername());
+
+                // only if the user has a profile picture push it to Database
                 if(currentUser.getParseFile("profilepic") != null){
                     post.put("profilepic", currentUser.getParseFile("profilepic"));
                 }
@@ -180,22 +188,26 @@ public class FinishPostFragment extends Fragment {
                 }
                 // Snackbar if persons EditText is empty
                 else if(personsString.trim().equals("")){
-                    Snackbar.make(getView(), "Do not forget the number of persons!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(getView(), "Do not forget the number of persons!",
+                            Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
                 // Snackbar if address EditText is empty
                 else if(addressString.trim().equals("")){
-                    Snackbar.make(getView(), "Do not forget the address of your final destination!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(getView(), "Do not forget the address of your final destination!",
+                            Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
                 // Snackbar if flight number EditText is empty
                 else if(flightnrString.trim().equals("")){
-                    Snackbar.make(getView(), "Do not forget your flight number!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(getView(), "Do not forget your flight number!",
+                            Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
                 // Snackbar if flight number EditText is empty
                 else if(contactString.trim().equals("")){
-                    Snackbar.make(getView(), "Do not forget your Email address or Phone Number!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(getView(), "Do not forget your Email address or Phone Number!",
+                            Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
                 // Else add post
@@ -203,7 +215,8 @@ public class FinishPostFragment extends Fragment {
                     post.saveInBackground(new SaveCallback() {
                         @Override
                         public void done(ParseException e) {
-                            Snackbar.make(getView(), "Your post has been successfully published!", Snackbar.LENGTH_LONG)
+                            Snackbar.make(getView(), "Your post has been successfully published!",
+                                    Snackbar.LENGTH_LONG)
                                     .setAction("Action", null).show();
                             fm.beginTransaction().replace(R.id.content_main, fragment).commit();
                         }
@@ -213,8 +226,6 @@ public class FinishPostFragment extends Fragment {
                 return true;
 
             default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
         }
     }

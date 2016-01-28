@@ -2,8 +2,6 @@ package rang.afterflight;
 
 import android.app.FragmentManager;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,18 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.parse.GetDataCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
 import com.parse.ParseUser;
 
 import rang.afterflight.fragments.DemandFragment;
 import rang.afterflight.fragments.MainFragment;
-import rang.afterflight.fragments.MessagesFragment;
 import rang.afterflight.fragments.MyPostsFragment;
 import rang.afterflight.fragments.SettingsFragment;
 
@@ -35,13 +28,6 @@ import rang.afterflight.fragments.SettingsFragment;
  */
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +106,7 @@ public class MainMenu extends AppCompatActivity
             ParseUser.logOut();
             Intent back = new Intent(this, LoginActivity.class);
             startActivity(back);
-
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

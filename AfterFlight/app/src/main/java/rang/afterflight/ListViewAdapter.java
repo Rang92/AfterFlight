@@ -2,7 +2,6 @@ package rang.afterflight;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +62,7 @@ public class ListViewAdapter extends ArrayAdapter<Post> {
         if (item.getImageFile() != null) {
             holder.imageItem.setImageBitmap(item.getImageFile());
         } else {
+            // default picture if user has not a profile picture
             holder.imageItem.setImageResource(R.drawable.noprofilepicture);
             holder.imageItem.setScaleType(ImageView.ScaleType.FIT_CENTER);
         }

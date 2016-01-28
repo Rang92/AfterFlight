@@ -42,53 +42,19 @@ public class SettingsFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
         View navBarView = inflater.inflate(R.layout.nav_header_main_menu, container, false);
 
         iv = (ImageView) rootView.findViewById(R.id.pic_upload);
         changePictureButton = (Button) rootView.findViewById(R.id.profilepic_button);
-        changePictureButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent (Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, FROM_GALLERY);
-            }
-        });
+        changeProfilePictureButton();
 
         user = (TextView) navBarView.findViewById(R.id.username_nav);
 
         saveSettings = (Button) rootView.findViewById(R.id.save_settings);
-        saveSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                // Compress image to lower quality scale 1 - 100
-
-                if(yourSelectedImage != null){
-                    Snackbar.make(getView(), "Your profile picture is uploaded!", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-
-                    yourSelectedImage.compress(Bitmap.CompressFormat.PNG, 80, stream);
-
-                    byte[] image = stream.toByteArray();
-
-                    // file in parse
-                    ParseFile file = new ParseFile("profilepic", image);
-                    file.saveInBackground();
-
-                    ParseUser currentUser = ParseUser.getCurrentUser();
-                    currentUser.put("profilepic", file);
-
-                    currentUser.saveInBackground();
-                }
-
-                else {
-                    Snackbar.make(getView(), "You did not select a file to upload!", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            }
-        });
+        saveSettingsButton();
 
 
         return rootView;
@@ -123,6 +89,53 @@ public class SettingsFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+    public void changeProfilePictureButton(){
+        changePictureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_PICK,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i, FROM_GALLERY);
+            }
+        });
+    }
+
+    public void saveSettingsButton(){
+        saveSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                // Compress image to lower quality scale 1 - 100
+
+                if(yourSelectedImage != null){
+                    Snackbar.make(getView(), "Your profile picture is uploaded!",
+                            Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+
+                    yourSelectedImage.compress(Bitmap.CompressFormat.PNG, 80, stream);
+
+                    byte[] image = stream.toByteArray();
+
+                    // file in parse
+                    ParseFile file = new ParseFile("profilepic", image);
+                    file.saveInBackground();
+
+                    ParseUser currentUser = ParseUser.getCurrentUser();
+                    currentUser.put("profilepic", file);
+
+                    currentUser.saveInBackground();
+                }
+
+                else {
+                    Snackbar.make(getView(), "You did not select a file to upload!",
+                            Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            }
+        });
+    }
+
+    // get image from gallery phone
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -134,7 +147,8 @@ public class SettingsFragment extends Fragment {
                     Uri uri = data.getData();
                     String[]projection = {MediaStore.Images.Media.DATA};
 
-                    Cursor cursor = getActivity().getApplicationContext().getContentResolver().query(uri, projection, null, null, null);
+                    Cursor cursor = getActivity().getApplicationContext()
+                            .getContentResolver().query(uri, projection, null, null, null);
                     cursor.moveToFirst();
 
                     int columnIndex = cursor.getColumnIndex(projection[0]);
@@ -149,7 +163,6 @@ public class SettingsFragment extends Fragment {
                     iv.setBackground(d);
                 }
         }
-
     }
 
 }

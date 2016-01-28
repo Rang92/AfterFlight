@@ -18,22 +18,28 @@ import rang.afterflight.R;
  */
 public class MainFragment extends Fragment{
 
-    ImageButton floatButton;
+    ImageButton addPost;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        floatButton = (ImageButton)rootView.findViewById(R.id.postButtonMain);
-        floatButton.setOnClickListener(new View.OnClickListener() {
+        addPost = (ImageButton)rootView.findViewById(R.id.postButtonMain);
+        clickOnAddPost();
+
+        return rootView;
+    }
+
+    public void clickOnAddPost(){
+        addPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fm = getActivity().getFragmentManager();
-                fm.beginTransaction().replace(R.id.content_main, new AirportPostFragment(getActivity())).commit();
+                fm.beginTransaction().replace(R.id.content_main,
+                        new AirportPostFragment(getActivity())).commit();
             }
         });
-
-        return rootView;
     }
 }

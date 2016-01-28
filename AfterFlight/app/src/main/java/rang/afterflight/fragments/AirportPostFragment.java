@@ -36,31 +36,27 @@ public class AirportPostFragment extends Fragment {
     XmlPullParser parser;
     HashSet airport_list;
     HashSet<String> list = new HashSet<>();
+    FragmentManager fm;
+    Fragment fragment;
+    Bundle bundle;
+    String itemString;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_airportpost, container, false);
 
         listViewAirports = (ListView) rootView.findViewById(R.id.listView_airports);
         editSearch = (EditText) rootView.findViewById(R.id.search_airport);
-        adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1, stringsList);
 
+        adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,
+                stringsList);
         listViewAirports.setAdapter(adapter);
-        listViewAirports.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id) {
-                FragmentManager fm = getActivity().getFragmentManager();
-                Fragment fragment = new FinishPostFragment();
-                Bundle bundle = new Bundle();
-                String itemString = listViewAirports.getItemAtPosition(position).toString();;
-                bundle.putString("data", itemString);
-                fragment.setArguments(bundle);
-                fm.beginTransaction().replace(R.id.content_main, fragment).commit();
-            }
-        });
+
+        airportItemClick();
         searchAirport();
+
         return rootView;
     }
 
@@ -69,6 +65,8 @@ public class AirportPostFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+        // try to read airport list(xml file)
         try {
             airport_list = readFeed();
         } catch (XmlPullParserException e) {
@@ -79,7 +77,7 @@ public class AirportPostFragment extends Fragment {
         stringsList = (String[]) airport_list.toArray( new String[airport_list.size()]);
     }
 
-
+    // method to search for an airport with a query in EditText
     public void searchAirport(){
         editSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -99,7 +97,24 @@ public class AirportPostFragment extends Fragment {
         });
     }
 
+    // if airport item is clicked go to FinishPostFragment
+    public void airportItemClick(){
+        listViewAirports.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                fm = getActivity().getFragmentManager();
+                fragment = new FinishPostFragment();
+                bundle = new Bundle();
+                itemString = listViewAirports.getItemAtPosition(position).toString();;
+                bundle.putString("data", itemString);
+                fragment.setArguments(bundle);
+                fm.beginTransaction().replace(R.id.content_main, fragment).commit();
+            }
+        });
+    }
 
+    // get context (airport xml) to parse
     public AirportPostFragment(Context context){
         myContext = context;
         parser = myContext.getResources().getXml(R.xml.airports);

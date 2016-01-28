@@ -14,25 +14,13 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/search_post"
-        android:hint="Search post"
-        android:layout_below="@+id/frag_myposts"
-        android:textColor="#045FB4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/mypost_listview"
-        android:layout_below="@+id/search_post"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:choiceMode="singleChoice" />
+        android:choiceMode="singleChoice"
+        android:layout_below="@+id/frag_myposts" />
 
 </RelativeLayout>

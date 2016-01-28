@@ -34,14 +34,15 @@ public class SelectedPostFragment extends Fragment {
     TextView airportPost, datePost, timePost, personsPost, addressPost,
             flightnrPost, postedbyPost, contactPost;
 
-    ImageView profilepicPost;
+    ImageButton profilepicPost;
     Bitmap bmp;
 
     String username;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
+            savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_selectedpost, container, false);
 
         airportPost = (TextView) rootView.findViewById(R.id.airport_post);
@@ -54,14 +55,22 @@ public class SelectedPostFragment extends Fragment {
         contactPost = (TextView) rootView.findViewById(R.id.contact_post);
         profilepicPost = (ImageButton) rootView.findViewById(R.id.image_post);
 
+        clickOnPicture();
+        loadPostInfo();
+
+        return rootView;
+    }
+
+    public void clickOnPicture(){
         profilepicPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String test = "aapje";
-                showDialog(test);
+                showDialog();
             }
         });
+    }
 
+    public void loadPostInfo(){
         Post selectedPost = getArguments().getParcelable("data");
 
         String airport = (String) selectedPost.get("airport");
@@ -95,6 +104,7 @@ public class SelectedPostFragment extends Fragment {
             });
         }
 
+        // Give all TextViews a String value
         airportPost.setText(airport);
         datePost.setText(date);
         timePost.setText(time);
@@ -103,11 +113,9 @@ public class SelectedPostFragment extends Fragment {
         flightnrPost.setText(flightnr);
         postedbyPost.setText(username);
         contactPost.setText(contact);
-
-        return rootView;
     }
 
-    private void showDialog(String message)
+    private void showDialog()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater factory = LayoutInflater.from(getActivity());

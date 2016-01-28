@@ -14,6 +14,7 @@ import rang.afterflight.R;
  * Rang Salih
  * rangsalih@gmail.com
  * 10690972
+ * http://stackoverflow.com/questions/25065307/call-datepicker-from-a-fragment
  */
 public class DateDialogFragment extends DialogFragment{
 
@@ -23,7 +24,7 @@ public class DateDialogFragment extends DialogFragment{
     public static DateDialogFragment newInstance()
     {
         DateDialogFragment frag = new DateDialogFragment();
-        frag.isModal = true; // WHEN FRAGMENT IS CALLED AS A DIALOG SET FLAG
+        frag.isModal = true;
         return frag;
     }
 
@@ -34,10 +35,10 @@ public class DateDialogFragment extends DialogFragment{
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         // Use the current date as the default date in the picker
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
 
         // Create a new instance of DatePickerDialog and return it
         return new DatePickerDialog(getActivity(), onDateSet, year, month, day);
@@ -47,7 +48,7 @@ public class DateDialogFragment extends DialogFragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if(isModal) // AVOID REQUEST FEATURE CRASH
+        if(isModal)
         {
             return super.onCreateView(inflater, container, savedInstanceState);
         }

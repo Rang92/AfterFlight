@@ -18,6 +18,7 @@ import rang.afterflight.R;
  * Rang Salih
  * rangsalih@gmail.com
  * 10690972
+ * http://stackoverflow.com/questions/25065307/call-datepicker-from-a-fragment
  */
 public class TimeDialogFragment extends DialogFragment {
 

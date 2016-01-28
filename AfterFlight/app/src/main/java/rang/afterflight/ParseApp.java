@@ -13,8 +13,8 @@ public class ParseApp extends Application {
 
     public void onCreate() {
         ParseObject.registerSubclass(Post.class);
-
-        Parse.initialize(this, "o93e7SMoCvVHZ6CUPOT6pK6otklYdCQpRelt2ZPY", "GHyPVlarrF64FAHGxRvEXkaCApxgxrUqqUh3oIEh");
+        Parse.initialize(this, "o93e7SMoCvVHZ6CUPOT6pK6otklYdCQpRelt2ZPY",
+                "GHyPVlarrF64FAHGxRvEXkaCApxgxrUqqUh3oIEh");
         super.onCreate();
     }
 
