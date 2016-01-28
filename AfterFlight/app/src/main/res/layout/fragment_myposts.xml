@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
@@ -7,8 +7,32 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="My posts"
-        android:id="@+id/frag_posts"
-        android:textColor="#045FB4"
+        android:id="@+id/frag_myposts"
         android:layout_marginTop="5dp"
-        android:layout_gravity="center_horizontal|top" />
-</FrameLayout>
+        android:textColor="#045FB4"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_post"
+        android:hint="Search post"
+        android:layout_below="@+id/frag_myposts"
+        android:textColor="#045FB4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mypost_listview"
+        android:layout_below="@+id/search_post"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:choiceMode="singleChoice" />
+
+</RelativeLayout>

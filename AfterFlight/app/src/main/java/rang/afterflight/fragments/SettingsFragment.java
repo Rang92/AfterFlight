@@ -62,24 +62,31 @@ public class SettingsFragment extends Fragment {
         saveSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(getView(), "Your profile picture is uploaded!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 // Compress image to lower quality scale 1 - 100
-                yourSelectedImage.compress(Bitmap.CompressFormat.PNG, 80, stream);
 
+                if(yourSelectedImage != null){
+                    Snackbar.make(getView(), "Your profile picture is uploaded!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
 
-                byte[] image = stream.toByteArray();
+                    yourSelectedImage.compress(Bitmap.CompressFormat.PNG, 80, stream);
 
-                // file in parse
-                ParseFile file = new ParseFile("profilepic", image);
-                file.saveInBackground();
+                    byte[] image = stream.toByteArray();
 
-                ParseUser currentUser = ParseUser.getCurrentUser();
-                currentUser.put("profilepic", file);
+                    // file in parse
+                    ParseFile file = new ParseFile("profilepic", image);
+                    file.saveInBackground();
 
+                    ParseUser currentUser = ParseUser.getCurrentUser();
+                    currentUser.put("profilepic", file);
 
-                currentUser.saveInBackground();
+                    currentUser.saveInBackground();
+                }
+
+                else {
+                    Snackbar.make(getView(), "You did not select a file to upload!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
             }
         });
 
