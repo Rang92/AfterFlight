@@ -8,6 +8,7 @@ import com.parse.ParseObject;
  * Rang Salih
  * rangsalih@gmail.com
  * 10690972
+ * https://parse.com/docs
  */
 public class ParseApp extends Application {
 

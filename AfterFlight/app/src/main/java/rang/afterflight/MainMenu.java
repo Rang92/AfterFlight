@@ -1,6 +1,9 @@
 package rang.afterflight;
 
+import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,10 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.parse.ParseUser;
-
 import rang.afterflight.fragments.DemandFragment;
 import rang.afterflight.fragments.MainFragment;
 import rang.afterflight.fragments.MyPostsFragment;
@@ -28,7 +28,6 @@ import rang.afterflight.fragments.SettingsFragment;
  */
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +51,12 @@ public class MainMenu extends AppCompatActivity
         final TextView user = (TextView) findViewById(R.id.username_nav);
         user.setText(username);
 
+        Bundle bundle = new Bundle();
+        bundle.putString("username", username);
         FragmentManager fm = getFragmentManager();
-        fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit();
+        Fragment fragment = new rang.afterflight.fragments.MainFragment();
+        fragment.setArguments(bundle);
+        fm.beginTransaction().replace(R.id.content_main, fragment).commit();
 
     }
 
@@ -64,7 +67,7 @@ public class MainMenu extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            showExitDialog();
         }
     }
 
@@ -103,14 +106,27 @@ public class MainMenu extends AppCompatActivity
         }  else if (id == R.id.nav_settings) {
             fm.beginTransaction().replace(R.id.content_main, new SettingsFragment()).commit();
         } else if (id == R.id.nav_logout) {
-            ParseUser.logOut();
-            Intent back = new Intent(this, LoginActivity.class);
-            startActivity(back);
-            finish();
+//            ParseUser.logOut();
+//            Intent back = new Intent(this, LoginActivity.class);
+//            startActivity(back);
+//            finish();
+            showExitDialog();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void showExitDialog(){
+        new AlertDialog.Builder(this)
+                .setTitle("Really Exit?")
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton("NO", null)
+                .setNeutralButton("YES", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        finish();
+                    }
+                }).create().show();
     }
 }

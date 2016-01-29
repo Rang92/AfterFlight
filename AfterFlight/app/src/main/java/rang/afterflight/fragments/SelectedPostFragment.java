@@ -2,17 +2,15 @@ package rang.afterflight.fragments;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
-import android.app.FragmentManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,7 +18,6 @@ import android.widget.TextView;
 import com.parse.GetDataCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
-import com.parse.ParseUser;
 
 import rang.afterflight.Post;
 import rang.afterflight.R;
@@ -34,7 +31,7 @@ public class SelectedPostFragment extends Fragment {
     TextView airportPost, datePost, timePost, personsPost, addressPost,
             flightnrPost, postedbyPost, contactPost;
 
-    ImageButton profilepicPost;
+    ImageButton profilepicPost, clipButton;
     Bitmap bmp;
 
     String username;
@@ -54,22 +51,39 @@ public class SelectedPostFragment extends Fragment {
         postedbyPost = (TextView) rootView.findViewById(R.id.postedby_post);
         contactPost = (TextView) rootView.findViewById(R.id.contact_post);
         profilepicPost = (ImageButton) rootView.findViewById(R.id.image_post);
+        clipButton = (ImageButton) rootView.findViewById(R.id.clip_button);
 
         clickOnPicture();
+        clickOnClip();
         loadPostInfo();
 
         return rootView;
     }
 
+    // opens pictureDialog
     public void clickOnPicture(){
         profilepicPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialog();
+                showPictureDialog();
             }
         });
     }
 
+    // copies contact info to Clipboard
+    public void clickOnClip(){
+        clipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                String copyString = (String) contactPost.getText();
+                android.content.ClipData clip = android.content.ClipData.newPlainText("text label", copyString);
+                clipboard.setPrimaryClip(clip);
+            }
+        });
+    }
+
+    // loads post info from previous fragment
     public void loadPostInfo(){
         Post selectedPost = getArguments().getParcelable("data");
 
@@ -115,7 +129,8 @@ public class SelectedPostFragment extends Fragment {
         contactPost.setText(contact);
     }
 
-    private void showDialog()
+    // creates and opens pictureDialog
+    private void showPictureDialog()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater factory = LayoutInflater.from(getActivity());

@@ -50,6 +50,7 @@ public class AirportPostFragment extends Fragment {
         listViewAirports = (ListView) rootView.findViewById(R.id.listView_airports);
         editSearch = (EditText) rootView.findViewById(R.id.search_airport);
 
+        // create arrayAdapter for listView
         adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,
                 stringsList);
         listViewAirports.setAdapter(adapter);
@@ -134,6 +135,7 @@ public class AirportPostFragment extends Fragment {
                     }
                 }
             }
+            // parse till there is an item left
             parser.next();
         }
         return list;

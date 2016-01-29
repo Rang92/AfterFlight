@@ -68,6 +68,7 @@ public class MyPostsFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+    // opens SelectedPostFragment with content
     public void clickOnPost(){
         myPostListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -85,17 +86,19 @@ public class MyPostsFragment extends Fragment {
         });
     }
 
+    // long click on post to delete
     public void longClickOnPost(){
         myPostListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 selectedPost = postArrayList.get(position);
-                showDialog();
+                deleteDialog();
                 return true;
             }
         });
     }
 
+    // loads posts of current user
     public void loadOwnPosts(){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
         ParseUser currentUser = ParseUser.getCurrentUser();
@@ -127,19 +130,18 @@ public class MyPostsFragment extends Fragment {
         });
     }
 
-    private void showDialog() {
+    // opens deleteDialog to delete post (or go back)
+    private void deleteDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        LayoutInflater factory = LayoutInflater.from(getActivity());
-        final View view = factory.inflate(R.layout.dialog_deletepost, null);
-        builder.setView(view);
         builder.setCancelable(false);
-        builder.setTitle("Are you sure you want to delete?");
-        builder.setPositiveButton("GO BACK", new DialogInterface.OnClickListener() {
+        builder.setTitle("Really delete?");
+        builder.setMessage("Are you sure you want to delete your post?");
+        builder.setPositiveButton("NO", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
             }
         });
-        builder.setNeutralButton("DELETE POST", new DialogInterface.OnClickListener() {
+        builder.setNeutralButton("DELETE", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
                 query.whereEqualTo("objectId", selectedPost.getId());

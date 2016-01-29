@@ -15,6 +15,7 @@ import java.util.ArrayList;
  * Rang Salih
  * rangsalih@gmail.com
  * 10690972
+ * http://stackoverflow.com/questions/24801807/returning-incorrect-position-inside-getview
  */
 public class ListViewAdapter extends ArrayAdapter<Post> {
     Context context;

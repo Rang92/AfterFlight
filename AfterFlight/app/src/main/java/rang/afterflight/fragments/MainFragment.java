@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import rang.afterflight.R;
 
@@ -32,6 +33,7 @@ public class MainFragment extends Fragment{
         return rootView;
     }
 
+    // opens AirportPostFragment
     public void clickOnAddPost(){
         addPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,4 +44,6 @@ public class MainFragment extends Fragment{
             }
         });
     }
+
+
 }

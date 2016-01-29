@@ -5,14 +5,11 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -60,9 +57,12 @@ public class DemandFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+        // all posts will be loaded when fragment opens
         loadAllPosts();
     }
 
+
+    // opens the SelectedPostFragment with content
     public void clickOnPost(){
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -79,6 +79,8 @@ public class DemandFragment extends Fragment {
         });
     }
 
+
+    // loads all posts to ListView
     public void loadAllPosts(){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Post");
         postArrayList = new ArrayList<Post>();

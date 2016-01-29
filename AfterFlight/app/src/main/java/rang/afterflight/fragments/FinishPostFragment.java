@@ -33,7 +33,7 @@ public class FinishPostFragment extends Fragment {
     EditText persons_finish, address_finish, flightnr_finish, contact_finish;
     TextView airport_finish, date_finish, time_finish;
     Button dateButton, timeButton;
-    DateDialogFragment dpf;
+    DateDialogFragment ddf;
     TimeDialogFragment tdf;
 
     @Nullable
@@ -69,6 +69,8 @@ public class FinishPostFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+
+    // DateDialog opens
     public void clickOnDateButton(){
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +80,7 @@ public class FinishPostFragment extends Fragment {
         });
     }
 
+    // TimeDialog opens
     public void clickOnTimeButton(){
         timeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,15 +92,16 @@ public class FinishPostFragment extends Fragment {
     }
 
     public void dateDialogFragment(View v){
-        dpf = new DateDialogFragment().newInstance();
-        dpf.setCallBack(onDate);
-        dpf.show(getFragmentManager().beginTransaction(), "DatePickerFragment");
+        ddf = new DateDialogFragment().newInstance();
+        ddf.setCallBack(onDate);
+        ddf.show(getFragmentManager().beginTransaction(), "DatePickerFragment");
     }
 
     DatePickerDialog.OnDateSetListener onDate = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
+            // add one to months (begins with 0)
             monthOfYear +=1;
             date_finish.setText(String.valueOf(year) + "-" + String.valueOf(monthOfYear)
                     + "-" + String.valueOf(dayOfMonth));
@@ -151,9 +155,9 @@ public class FinishPostFragment extends Fragment {
                 final FragmentManager fm = getActivity().getFragmentManager();
                 final Fragment fragment = new DemandFragment();
 
-                // put strings to listview in DemandFragment
                 ParseObject post = ParseObject.create("Post");
 
+                // put strings to ParseObject post
                 post.put("airport", airport_finish.getText().toString());
                 post.put("date", date_finish.getText().toString());
                 post.put("time", time_finish.getText().toString());

@@ -21,9 +21,21 @@
         android:layout_marginRight="22dp"
         android:layout_marginEnd="22dp"
         android:scaleType="fitXY"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/date_post" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/clip_button"
+        android:scaleType="fitXY"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/clipbutton"
+        android:layout_below="@+id/address_post"
+        android:layout_alignRight="@+id/image_post"
+        android:layout_alignEnd="@+id/image_post" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,10 +82,9 @@
         android:text="Number of persons"
         android:id="@+id/textView4"
         android:textSize="10dp"
-        android:layout_below="@+id/image_post"
+        android:layout_alignBottom="@+id/image_post"
         android:layout_alignLeft="@+id/time_post"
-        android:layout_alignStart="@+id/time_post"
-        android:layout_marginTop="20dp" />
+        android:layout_alignStart="@+id/time_post" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -154,28 +165,28 @@
         android:id="@+id/address_post"
         android:textColor="#045FB4"
         android:text="address"
-        android:layout_marginBottom="40dp"
         android:layout_above="@+id/textView6"
         android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5" />
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginBottom="18dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:id="@+id/flightnr_post"
         android:textColor="#045FB4"
+        android:layout_marginBottom="24dp"
+        android:text="flightnr"
         android:layout_above="@+id/textView7"
         android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_marginBottom="20dp"
-        android:text="flightnr" />
+        android:layout_alignStart="@+id/textView6" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:id="@+id/postedby_post"
         android:textColor="#045FB4"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="75dp"
         android:text="username"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/textView7"
@@ -188,8 +199,10 @@
         android:text="contactPost"
         android:id="@+id/contact_post"
         android:textColor="#045FB4"
-        android:textSize="10dp"
+        android:textSize="8dp"
+        android:layout_marginLeft="5dp"
         android:layout_below="@+id/image_post"
         android:layout_alignLeft="@+id/image_post"
         android:layout_alignStart="@+id/image_post" />
+
 </RelativeLayout>

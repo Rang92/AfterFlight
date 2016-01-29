@@ -74,6 +74,7 @@
             android:ems="10"
             android:layout_marginLeft="2dp"
             android:textSize="15dp"
+            android:maxLength="2"
             android:textColor="#045FB4"
             android:id="@+id/persons_finish"
             android:layout_gravity="center_horizontal" />
@@ -95,6 +96,7 @@
             android:textColor="#045FB4"
             android:textSize="15dp"
             android:singleLine="true"
+            android:maxLength="8"
             android:layout_marginLeft="2dp"
             android:hint="Flight number"/>
 
@@ -103,7 +105,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/contact_finish"
             android:textColor="#045FB4"
-            android:textSize="15dp"
+
             android:layout_marginLeft="2dp"
             android:singleLine="true"
             android:hint="Email Address or Phone Number"/>

@@ -29,7 +29,7 @@ public class TimeDialogFragment extends DialogFragment {
     public static TimeDialogFragment newInstance()
     {
         TimeDialogFragment frag = new TimeDialogFragment();
-        frag.isModal = true; // WHEN FRAGMENT IS CALLED AS A DIALOG SET FLAG
+        frag.isModal = true;
         return frag;
     }
 
@@ -49,7 +49,7 @@ public class TimeDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if (isModal) // AVOID REQUEST FEATURE CRASH
+        if (isModal)
         {
             return super.onCreateView(inflater, container, savedInstanceState);
         } else {

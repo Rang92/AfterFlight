@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:background="#FFFFFF">
 
     <include
         layout="@layout/app_bar_main_menu"
@@ -19,7 +20,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:itemTextColor="#000000"
+        app:itemTextColor="#FFFFFF"
+        android:background="#424242"
+        app:itemIconTint="#FFFFFF"
         app:headerLayout="@layout/nav_header_main_menu"
         app:menu="@menu/activity_main_menu_drawer" />
 

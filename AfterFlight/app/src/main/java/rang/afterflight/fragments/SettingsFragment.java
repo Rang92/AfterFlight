@@ -89,6 +89,7 @@ public class SettingsFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+    // opens photo gallery
     public void changeProfilePictureButton(){
         changePictureButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +101,7 @@ public class SettingsFragment extends Fragment {
         });
     }
 
+    // saves (new) profile picture
     public void saveSettingsButton(){
         saveSettings.setOnClickListener(new View.OnClickListener() {
             @Override
