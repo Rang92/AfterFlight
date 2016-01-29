@@ -96,7 +96,7 @@ You can see in the whole market in the Demand page, and all the information that
 The first day I came up with the idea to create AfterFlight, it sounded like a great idea and it is.
 It was the first time for me to use the parse database.
 The first thing that I knew about my layout was that I wanted to create a navigation drawer.
-In my opinion it is the best way to manage applications accounts, using a navigation drawer with fragments.
+In my opinion it is the best way to manage app accounts, using a navigation drawer with fragments.
 
 * My first problem was sending and receiving data from fragment to fragment. 
 I lost a lot of time with sending an object to another fragment, but it was worth it.
