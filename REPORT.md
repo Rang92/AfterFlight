@@ -48,5 +48,32 @@ You can see in the whole market in the Demand page, and all the information that
 * RegisterActivity: The user can register here, account will be sended to parse database.
 * ListViewAdapter: Creates custom listview.
 
+#### Screenshots
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/LoginActivity.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/RegisterActivity.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/MainFragment.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/NavigationDrawer.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/AirportPostFragment.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/FinishPostFragmentNew.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/DemandFragment.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/SelectedPostFragment.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/MyPostsFragment.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/SettingsFragment.png?raw=true "Click to zoom")
+
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/ProfilePicture.png?raw=true "Click to zoom")
+
+
+
+
 
 
