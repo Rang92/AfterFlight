@@ -2,13 +2,13 @@
 ### Report
 Rang Salih - 10690972
 
-#### Description
+### Description
 AfterFlight is the best solution to bring you to your final destination after travelling by plane. 
 You can create a post and someone, that wants to pick you up from the airport and bring you to your final destination by car for a good price, will see your post.
 Or vica versa, you can pick someone up from the airport near your house and bring that person to their final destination, and receive some money.
 You can see in the whole market in the Demand page, and all the information that you need is available in the post to make contact.
 
-#### Features
+### Features
 * Account
   * Log in
   * Register
@@ -27,10 +27,10 @@ You can see in the whole market in the Demand page, and all the information that
 * Settings 
   * Change profile picture
 
-#### Design
+### Design
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/AfterFlightClasses.png?raw=true "Click to zoom")
 
-#### Classes
+### Classes
 * SplashScreenActivity: Creates the startup screen. 
 * MainMenu: Creates the navigation drawer and navigation to fragments.
  * MainFragment:
@@ -48,7 +48,7 @@ You can see in the whole market in the Demand page, and all the information that
 * RegisterActivity: The user can register here, account will be sended to parse database.
 * ListViewAdapter: Creates custom listview.
 
-#### Screenshots
+## Screenshots
 ### SplashScreenActivity
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/SplashScreenActivity.png?raw=true "Click to zoom")
 
