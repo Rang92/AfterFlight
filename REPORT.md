@@ -29,3 +29,24 @@ You can see in the whole market in the Demand page, and all the information that
 
 #### Design
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/AfterFlightClasses.png?raw=true "Click to zoom")
+
+#### Classes
+* SplashScreenActivity: Creates the startup screen. 
+* MainMenu: Creates the navigation drawer and navigation to fragments.
+ * MainFragment:
+ * AirportPostFragment: Creates listview to choose airport.
+ * FinishPostFragment: Creates post object with post information.
+ * DateDialogFragment: Creates date picker dialog.
+ * TimeDialogFragment: Creates time picker dialog.
+ * DemandFragment: Shows listview with posts of all users, connects with parse.
+ * MyPostsFragment: Shows listview with posts of current user.
+ * SelectedPostFragment: Shows all post information.
+ * SettingsFragment: User can change profile picture here.
+* ParseApp: Connects with parse.
+* Post: Creates post object.
+* LoginActivity: The user can login or register. The parse database will check if account exists.
+* RegisterActivity: The user can register here, account will be sended to parse database.
+* ListViewAdapter: Creates custom listview.
+
+
+
