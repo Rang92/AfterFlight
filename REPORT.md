@@ -49,27 +49,43 @@ You can see in the whole market in the Demand page, and all the information that
 * ListViewAdapter: Creates custom listview.
 
 #### Screenshots
-
+### LoginActivity
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/LoginActivity.png?raw=true "Click to zoom")
 
+### RegisterActivity
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/RegisterActivity.png?raw=true "Click to zoom")
 
+### MainFragment
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/MainFragment.png?raw=true "Click to zoom")
 
+### NavigationDrawer
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/NavigationDrawer.png?raw=true "Click to zoom")
 
+### AirportPostFragment
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/AirportPostFragment.png?raw=true "Click to zoom")
 
+### FinishPostFragment
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/FinishPostFragmentNew.png?raw=true "Click to zoom")
 
+### DatePickerDialog (dialog in FinishPostFragment)
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/DatePickerDialog.png?raw=true "Click to zoom")
+
+### TimePickerDialog (dialog in FinishPostFragment)
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/TimePickerDialog.png?raw=true "Click to zoom")
+
+### DemandFragment
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/DemandFragment.png?raw=true "Click to zoom")
 
+### SelectedPostFragment
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/SelectedPostFragment.png?raw=true "Click to zoom")
 
+### MyPostsFragment
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/MyPostsFragment.png?raw=true "Click to zoom")
 
+### SettingsFragment
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/SettingsFragment.png?raw=true "Click to zoom")
 
+### ProfilePicture(dialog in SelectedPostFragment)
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/ProfilePicture.png?raw=true "Click to zoom")
 
 
