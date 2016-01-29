@@ -48,7 +48,7 @@ You can see in the whole market in the Demand page, and all the information that
 * RegisterActivity: The user can register here, account will be sended to parse database.
 * ListViewAdapter: Creates custom listview.
 
-## Screenshots
+### Screenshots
 ### SplashScreenActivity
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/SplashScreenActivity.png?raw=true "Click to zoom")
 
@@ -90,6 +90,37 @@ You can see in the whole market in the Demand page, and all the information that
 
 ### ProfilePicture(dialog in SelectedPostFragment)
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/ProfilePicture.png?raw=true "Click to zoom")
+
+
+### Challenges and solutions
+#### Week 1
+The first day I came up with the idea to create AfterFlight, it sounded like a great idea and it is.
+It was the first time for me to use the parse database.
+The first thing that I knew about my layout was that I wanted to create a navigation drawer.
+In my opinion it is the best way to manage applications accounts, using a navigation drawer with fragments.
+
+* My first problem was sending and receiving data from fragment to fragment. 
+I lost a lot of time with sending an object to another fragment, but it was worth it.
+
+* A second problem was creating a search actionbar in a fragment, but that was not possible; based on the information on the internet.
+My solution was creating an edittext to search in a listview. The edittext can be used as a search bar.
+
+* The third problem was that I first created a normal listview, but it was better to create a custom cardview to implement in a listview.
+A cardview looks better in my opinion and is easier to click on. Adding an image in a item was much easier with a cardview instead of a normal listview.
+
+* Last but not least problem was creating push notification for the accounts to communicate.
+I've read a lot about push notification in parse, but I concluded that I did not have enough time for that.
+The solution is that the user can add his/her email address or phone number. The email address or phone number can be copied to clipboard with an imagebutton to use in other applications.
+
+Finally, in my opinion I created a good looking app which also works well, and I am happy with my result.
+
+
+
+
+
+
+
+
 
 
 
