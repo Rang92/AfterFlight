@@ -93,7 +93,6 @@ You can see in the whole market in the Demand page, and all the information that
 
 
 ### Challenges and solutions
-#### Week 1
 The first day I came up with the idea to create AfterFlight, it sounded like a great idea and it is.
 It was the first time for me to use the parse database.
 The first thing that I knew about my layout was that I wanted to create a navigation drawer.
