@@ -49,6 +49,9 @@ You can see in the whole market in the Demand page, and all the information that
 * ListViewAdapter: Creates custom listview.
 
 #### Screenshots
+### SplashScreenActivity
+![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/SplashScreenActivity.png?raw=true "Click to zoom")
+
 ### LoginActivity
 ![alt text](https://github.com/Rang92/AfterFlight/blob/master/doc/LoginActivity.png?raw=true "Click to zoom")
 
