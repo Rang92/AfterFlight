@@ -45,6 +45,47 @@ __________
 * At the end of the day I realised that I had to use the FragmentManager to get to a fragment and not intent.
 
 
+### Week 3
+__________
+#### day 1
+* Created AirportPostFragment with a listview of my xml file with aiports.
+* Created FinishPostFragment to finish a post and add to DemandFragment listview.
+
+#### day 2
+* Added a date dialog and time dialog to FinishPostFragment.
+* Issues with time: getting 0:0 instead of 00:00.
+
+#### day 3
+* Create an own ListViewAdapter for cardview.
+* Made a xml cardview layout.
+
+#### day 4
+* Problems with refreshen listview in DemandFragment.
+* Added username to cardview.
+
+#### day 5
+* Finished SettingsFragment; possible to change profile picture.
+
+
+### Week 4
+__________
+#### day 1
+* Fixed back button.
+* Edit dialogs.
+
+#### day 2
+* Made methods for onclicks.
+
+#### day 3
+* Created a startup screen (splashscreen).
+* ImageButton to see profile picture in a dialog (larger picture).
+
+#### day 4
+* Finished MyPostFragment; possible to delete own post.
+* Added a ImageButton (clipboard).
+* Added comments & cleaned code.
+
+
 
 
 
